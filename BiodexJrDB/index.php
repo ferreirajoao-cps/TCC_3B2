@@ -40,9 +40,9 @@
   </div>
 </form>
    </section>
-  </div>
 
-  <section class="animais">
+
+  <section class="pokedex">
       <?php
         
 
@@ -88,51 +88,94 @@
             $reino = $animais['reino'];
             $cat = $animais['cat'];
             $desc = $animais['descricao'];
-            echo "
-            <!-- ######################  Aqui começa o animais ############################# -->
-            <div class='animais' tabindex='$id'> 
-              <figure class='animais-figure'>
-                <img src='img/$id.png' alt='$nome'> <!-- Imagem do animais -->
-              </figure>
-              <section class='animais-description'>
-                <span class='animais-id'>#$id</span> <!-- Número do animais -->
-                <h1 class='animais-name'>$nome</h1> <!--Nome do animais -->
-                <div class='animais-types'>
-                  <span class='animais-type background-$reino'>$reino</span> <!-- reino 1 -->
-                </div>
-              </section>
-              <!-- Início dos stats do animais, exibidos quando clicamos -->
-                <section class='animais-stats'>
-                  <div class='stat-row'>
-                    <div>Nome</div> <!-- Nome -->
-                    <div class='stat-bar'>
-                      <div>$nome</div>
-                    </div>
-                  </div>
-                  <div class='stat-row'>
-                    <div>Reino</div> <!-- Reino -->
-                    <div class='stat-bar'>
-                      <div>$reino</div>
-                    </div>
-                  </div>
-                  <div class='stat-row'>
-                    <div>Categoria</div> <!-- Categoria -->
-                    <div class='stat-bar'>
-                      <div>$cat</div>
-                    </div>
-                  </div>
-                  <div class='stat-row'>
-                    <div>Descricao</div> <!-- Descricao -->
-                    <div class='stat-bar'>
-                      <div>$desc</div>
-                    </div>
-                  </div>
-                </section>
-                <!-- Fim dos stats do animais, exibidos quando clicamos -->
-            </div>
-          <!-- ######################### Aqui Termina o animais ####################################-->
+
+echo "<!-- ######################  Aqui começa o pokemon ############################# -->
+<div class='pokemon' tabindex='$id'> 
+  <figure class='pokemon-figure'>
+    <img src='img/$id.png' alt='$nome'> <!-- Imagem do pokemon -->
+  </figure>
+  <section class='pokemon-description'>
+    <span class='pokemon-id'>#$id</span> <!-- Número do pokemon -->
+    <h1 class='pokemon-name'>$nome</h1> <!--Nome do pokemon -->
+    <div class='pokemon-types'>
+      <span class='pokemon-type background-$reino'>$reino</span> <!-- Tipo 1 -->
+    </div>
+  </section>
+  <!-- Início dos stats do Pokemon, exibidos quando clicamos -->
+    <section class='pokemon-stats'>
+      <div class='stat-row'>
+        <div>Nome</div> <!-- Vida -->
+        <div class='stat-bar'>
+          <div>$nome</div>
+        </div>
+      </div>
+      <div class='stat-row'>
+        <div>Reino</div> <!-- Ataque -->
+        <div class='stat-bar'>
+          <div>$reino</div>
+        </div>
+      </div>
+      <div class='stat-row'>
+        <div>Categoria</div> <!-- Defesa -->
+        <div class='stat-bar'>
+          <div>$cat</div>
+        </div>
+      </div>
+      <div class='stat-row'>
+        <div>Descricao</div> <!-- Ataque Especial -->
+        <div class='stat-bar'>
+          <div>$desc</div>
+        </div>
+      </div>
+    </section>
+    <!-- Fim dos stats do Pokemon, exibidos quando clicamos -->
+</div>";
+
+          //   echo "
+          //   <!-- ######################  Aqui começa o animais ############################# -->
+          //   <div class='animais' tabindex='$id'> 
+          //     <figure class='animais-figure'>
+          //       <img src='img/$id.png' alt='$nome'> <!-- Imagem do animais -->
+          //     </figure>
+          //     <section class='animais-description'>
+          //       <span class='animais-id'>#$id</span> <!-- Número do animais -->
+          //       <h1 class='animais-name'>$nome</h1> <!--Nome do animais -->
+          //       <div class='animais-types'>
+          //         <span class='animais-type background-$reino'>$reino</span> <!-- reino 1 -->
+          //       </div>
+          //     </section>
+          //     <!-- Início dos stats do animais, exibidos quando clicamos -->
+          //       <section class='animais-stats'>
+          //         <div class='stat-row'>
+          //           <div>Nome</div> <!-- Nome -->
+          //           <div class='stat-bar'>
+          //             <div>$nome</div>
+          //           </div>
+          //         </div>
+          //         <div class='stat-row'>
+          //           <div>Reino</div> <!-- Reino -->
+          //           <div class='stat-bar'>
+          //             <div>$reino</div>
+          //           </div>
+          //         </div>
+          //         <div class='stat-row'>
+          //           <div>Categoria</div> <!-- Categoria -->
+          //           <div class='stat-bar'>
+          //             <div>$cat</div>
+          //           </div>
+          //         </div>
+          //         <div class='stat-row'>
+          //           <div>Descricao</div> <!-- Descricao -->
+          //           <div class='stat-bar'>
+          //             <div>$desc</div>
+          //           </div>
+          //         </div>
+          //       </section>
+          //       <!-- Fim dos stats do animais, exibidos quando clicamos -->
+          //   </div>
+          // <!-- ######################### Aqui Termina o animais ####################################-->
     
-            ";
+          //   ";
           }
         }else{
           echo "<p>Nenhum animais encontrado.</p>";
