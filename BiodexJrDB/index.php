@@ -11,203 +11,138 @@
     <title>BiodexJr</title>
 </head>
 <body>
-<?php
-   //Acessando o BD
-   include_once("conexao.php");
-   //Buscando reinos
-   $s1 = 'select distinct reino from animais order by reino asc;';
-   $r1 = mysqli_query($conexao, $s1);
-  ?>
+    <header>
+        <nav>
+            <div class="w3-bar" style="background-color:  #009688;;">
+                <button class="w3-button  w3-xlarge bl-hover" onclick="w3_open()"
+                    style="color: rgb(169, 227, 160);"><img src="./img/logo/Logotipo.jpg" alt="Logo Menu" width="50"
+                        height="50"></button>
+            </div>
+        </nav>
+    </header>
+    <main>
+        <!--Menu Sidebar-->
+        <section>
+            <div class="w3-sidebar w3-bar-block w3-border-right" style="display:none" id="mySidebar">
+                <button onclick="w3_close() " class="w3-bar-item w3-large">Close &times;</button>
+                <a href="./home.html" class="w3-bar-item w3-button">Home</a>
+                <a href="#" class="w3-bar-item w3-button">Login</a>
+                <a href="#" class="w3-bar-item w3-button">favoritos</a>
 
-  <div class="conteudo">
-    <!-- filtro -->
-   <section>
-   <form name="filtro" method="get" action="index.php">
-  <div class="form-group col-md-6 offset-md-3">
-    <label for="reino" class=" text-center">Reino</label> 
-      <select id="reino" name="reino" required="required" class="custom-select">
-        <option value='todos'>Todos</option>
-        <?php
-        while($reino = mysqli_fetch_assoc($r1)){
-          $r = $reino['reino'];
-          echo "<option value = '$r'>$r</option>";
-        }
-        ?>
-      </select>
-  </div> 
-  <div class="form-group col-md-6 offset-md-3 text-center"> 
-      <button name="submit" type="submit" class="btn btn-primary">Filtrar</button>
-  </div>
-</form>
-   </section>
+            </div>
+        </section>
+        <!--Slide Show Hero-->
+        <section>
+            <div class="slideshow-container">
 
+                <div class="mySlides fade">
+                    <div class="numbertext">1 / 3</div>
+                    <img class="gp-img-slide" src="./imgT/carrosel1.jpg" style="width: 100%;">
+                    <div class="text">Biologia</div>
+                </div>
 
-  <section class="pokedex">
-      <?php
-        
+                <div class="mySlides fade">
+                    <div class="numbertext">2 / 3</div>
+                    <img class="gp-img-slide" src="./imgT/carrosel2.jpg" style="width:100%">
+                    <div class="text">Evolução Biológica</div>
+                </div>
 
-        //Páginação
-        //Define a página atual
-        if(isset($_GET['pagina'])){
-          $pagina = $_GET['pagina'];
-        }else{
-          $pagina = 1;
-        }
+                <div class="mySlides fade">
+                    <div class="numbertext">3 / 3</div>
+                    <img class="gp-img-slide" src="./imgT/carrosel3.jpg" style="width:100%">
+                    <div class="text">Evolução</div>
+                </div>
 
-        //Determina quantos registros serão exibidos por página
-        $limite = 30;
+                <a class="prev" onclick="plusSlides(-1)">❮</a>
+                <a class="next" onclick="plusSlides(1)">❯</a>
 
-        //Calcula o total de regristros
-        $s = "select * from animais";
-        $r2 = mysqli_query($conexao,$s);
-        $total = mysqli_num_rows($r2);
-        
-        //Calcula a última página
-        $ultima = ceil($total / $limite);
-        
-        //Calcula a posicação a partir de onde serão exibidos os resultados
-        $inicio = ($pagina * $limite) - $limite;
-        
+            </div>
+        </section>
+        <!--Cards Hero-->
+        <section class="gp-section-home">
+            <div class="w3-card-4 w3-white gp-card-home gp-espaco">
+                <img class="gp-img-home" src="./img/quadrado/ReinoAnimal.jpg" alt="reinoanimal">
+                <div class="w3-container w3-center">
+                    <a href="animalia.php">
+                        <p>Reino Animalia</p>
+                    </a>
+                </div>
+            </div>
 
-        //Instrução SQL
-       if (isset($_GET['reino']) && $_GET['reino'] != "todos") {
-        $reino = $_GET['reino'];
-        $sql = "select * from animais where reino = '$reino' || reino2='$reino' limit $inicio,$limite ";
-       }
-       else {
-        $sql = "select * from animais limit $inicio, $limite;";
-       }
-        //Executando a instrução SQL
-        $resultado = mysqli_query($conexao,$sql);
-        //Verificando se encontrou resultado
-        if(mysqli_num_rows($resultado)>0){
-          //Lenda os dados de cada animais
-          while($animais=mysqli_fetch_assoc($resultado)){
-            $id = $animais['id'];
-            $nome = $animais['nome'];
-            $reino = $animais['reino'];
-            $cat = $animais['cat'];
-            $desc = $animais['descricao'];
+            <div class="w3-card-4 w3-white gp-card-home gp-espaco">
+                <img class="gp-img-home" src="./img/quadrado/ReinoPlantae.jpg" alt="reinoplantae">
+                <div class="w3-container w3-center">
+                    <a href="reinoplantae.html">
+                        <p>Reino Plantae</p>
+                    </a>
+                </div>
+            </div>
 
-echo "<!-- ######################  Aqui começa o pokemon ############################# -->
-<div class='pokemon' tabindex='$id'> 
-  <figure class='pokemon-figure'>
-    <img src='img/$id.png' alt='$nome'> <!-- Imagem do pokemon -->
-  </figure>
-  <section class='pokemon-description'>
-    <span class='pokemon-id'>#$id</span> <!-- Número do pokemon -->
-    <h1 class='pokemon-name'>$nome</h1> <!--Nome do pokemon -->
-    <div class='pokemon-types'>
-      <span class='pokemon-type background-$reino'>$reino</span> <!-- Tipo 1 -->
-    </div>
-  </section>
-  <!-- Início dos stats do Pokemon, exibidos quando clicamos -->
-    <section class='pokemon-stats'>
-      <div class='stat-row'>
-        <div>Nome</div> <!-- Vida -->
-        <div class='stat-bar'>
-          <div>$nome</div>
-        </div>
-      </div>
-      <div class='stat-row'>
-        <div>Reino</div> <!-- Ataque -->
-        <div class='stat-bar'>
-          <div>$reino</div>
-        </div>
-      </div>
-      <div class='stat-row'>
-        <div>Categoria</div> <!-- Defesa -->
-        <div class='stat-bar'>
-          <div>$cat</div>
-        </div>
-      </div>
-      <div class='stat-row'>
-        <div>Descricao</div> <!-- Ataque Especial -->
-        <div class='stat-bar'>
-          <div>$desc</div>
-        </div>
-      </div>
-    </section>
-    <!-- Fim dos stats do Pokemon, exibidos quando clicamos -->
-</div>";
+            <div class="w3-card-4 w3-white gp-card-home gp-espaco">
+                <img class="gp-img-home" src="./img/quadrado/ReinoMonera.jpg" alt="reinomonera">
+                <div class="w3-container w3-center">
+                    <a href="reinomonera.html">
+                        <p>Reino Monera</p>
+                    </a>
+                </div>
+        </section>
+        <section class="gp-section-home">
+            <div class="w3-card-4 w3-white gp-card-home gp-espaco">
+                <img class="gp-img-home" src="./img/quadrado/ReinoFungi.jpg" alt="reinofungi">
+                <div class="w3-container w3-center">
+                    <a href="reinofungi.html">
+                        <p>Reino Fungi</p>
+                    </a>
+                </div>
+            </div>
 
-          //   echo "
-          //   <!-- ######################  Aqui começa o animais ############################# -->
-          //   <div class='animais' tabindex='$id'> 
-          //     <figure class='animais-figure'>
-          //       <img src='img/$id.png' alt='$nome'> <!-- Imagem do animais -->
-          //     </figure>
-          //     <section class='animais-description'>
-          //       <span class='animais-id'>#$id</span> <!-- Número do animais -->
-          //       <h1 class='animais-name'>$nome</h1> <!--Nome do animais -->
-          //       <div class='animais-types'>
-          //         <span class='animais-type background-$reino'>$reino</span> <!-- reino 1 -->
-          //       </div>
-          //     </section>
-          //     <!-- Início dos stats do animais, exibidos quando clicamos -->
-          //       <section class='animais-stats'>
-          //         <div class='stat-row'>
-          //           <div>Nome</div> <!-- Nome -->
-          //           <div class='stat-bar'>
-          //             <div>$nome</div>
-          //           </div>
-          //         </div>
-          //         <div class='stat-row'>
-          //           <div>Reino</div> <!-- Reino -->
-          //           <div class='stat-bar'>
-          //             <div>$reino</div>
-          //           </div>
-          //         </div>
-          //         <div class='stat-row'>
-          //           <div>Categoria</div> <!-- Categoria -->
-          //           <div class='stat-bar'>
-          //             <div>$cat</div>
-          //           </div>
-          //         </div>
-          //         <div class='stat-row'>
-          //           <div>Descricao</div> <!-- Descricao -->
-          //           <div class='stat-bar'>
-          //             <div>$desc</div>
-          //           </div>
-          //         </div>
-          //       </section>
-          //       <!-- Fim dos stats do animais, exibidos quando clicamos -->
-          //   </div>
-          // <!-- ######################### Aqui Termina o animais ####################################-->
-    
-          //   ";
-          }
-        }else{
-          echo "<p>Nenhum animais encontrado.</p>";
-        }
-      ?>
-<div class="paginacao">
-        <?php
-            //Define a página anterior
-            $anterior = $pagina - 1;
-            if($anterior<1){
-              $anterior = 1;
+            <div class="w3-card-4 w3-white gp-card-home gp-espaco">
+                <img class="gp-img-home" src="./img/quadrado/ReinoProtista.jpg" alt="reinoprotista">
+                <div class="w3-container w3-center">
+                    <a href="reinoprotista.html">
+                        <p>Reino Protista</p>
+                    </a>
+                </div>
+            </div>
+
+        </section>
+    </main>
+    <footer>
+        <script>
+            let slideIndex = 1;
+            showSlides(slideIndex);
+
+            function plusSlides(n) {
+                showSlides(slideIndex += n);
             }
-            //Define a página posterior
-            $posterior = $pagina + 1;
-            if($posterior>$ultima){
-              $posterior = $ultima;
+
+            function currentSlide(n) {
+                showSlides(slideIndex = n);
             }
-            //Cria a barra de navegação de páginas
-            echo "
-              <a href='index.php?pagina=1'><button type='button' class='btn btn-primary btn-sm'> << </button></a>
-              <a href='index.php?pagina=$anterior'> <button type='button' class='btn btn-primary btn-sm'> < </button></a>
-              <button type='button' class='btn btn-secondary'>$pagina</button>
-              <a href='index.php?pagina=$posterior'><button type='button' class='btn btn-primary btn-sm'> > </button></a>
-              <a href='index.php?pagina=$ultima'><button type='button' class='btn btn-primary btn-sm'> >> </button></a>
-            ";
-        ?>
-    </div>
-  </div>
 
+            function showSlides(n) {
+                let i;
+                let slides = document.getElementsByClassName("mySlides");
+                let dots = document.getElementsByClassName("dot");
+                if (n > slides.length) { slideIndex = 1 }
+                if (n < 1) { slideIndex = slides.length }
+                for (i = 0; i < slides.length; i++) {
+                    slides[i].style.display = "none";
+                }
+                for (i = 0; i < dots.length; i++) {
+                    dots[i].className = dots[i].className.replace(" active", "");
+                }
+                slides[slideIndex - 1].style.display = "block";
+                dots[slideIndex - 1].className += " active";
+            }
+            function w3_open() {
+                document.getElementById("mySidebar").style.display = "block";
+            }
 
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
-
-
+            function w3_close() {
+                document.getElementById("mySidebar").style.display = "none";
+            }
+        </script>
+    </footer>
 </body>
 </html>
