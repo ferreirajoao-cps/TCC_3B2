@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="css/estilo2.css">
+  <link rel="stylesheet" href="css/newstyle.css">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"> 
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -37,19 +37,19 @@
 
                 <div class="mySlides fade">
                     <div class="numbertext">1 / 3</div>
-                    <img class="gp-img-slide" src="./imgT/carrosel1.jpg" style="width: 100%;">
+                    <img class="gp-img-slide" src="./img/imgCarrosel/carrosel1.jpg" style="width: 100%;">
                     <div class="text">Biologia</div>
                 </div>
 
                 <div class="mySlides fade">
                     <div class="numbertext">2 / 3</div>
-                    <img class="gp-img-slide" src="./imgT/carrosel2.jpg" style="width:100%">
+                    <img class="gp-img-slide" src="./img/imgCarrosel/carrosel2.jpg" style="width:100%">
                     <div class="text">Evolução Biológica</div>
                 </div>
 
                 <div class="mySlides fade">
                     <div class="numbertext">3 / 3</div>
-                    <img class="gp-img-slide" src="./imgT/carrosel3.jpg" style="width:100%">
+                    <img class="gp-img-slide" src="./img/imgCarrosel/carrosel3.jpg" style="width:100%">
                     <div class="text">Evolução</div>
                 </div>
 
@@ -61,7 +61,7 @@
         <!--Cards Hero-->
         <section class="gp-section-home">
             <div class="w3-card-4 w3-white gp-card-home gp-espaco">
-                <img class="gp-img-home" src="./img/quadrado/ReinoAnimal.jpg" alt="reinoanimal">
+                <img class="gp-img-home" src="./img/bannersReinos/animal.jpeg" alt="reinoanimal">
                 <div class="w3-container w3-center">
                     <a href="animalia.php">
                         <p>Reino Animalia</p>
@@ -70,7 +70,7 @@
             </div>
 
             <div class="w3-card-4 w3-white gp-card-home gp-espaco">
-                <img class="gp-img-home" src="./img/quadrado/ReinoPlantae.jpg" alt="reinoplantae">
+                <img class="gp-img-home" src="./img/bannersReinos/plantae.jpeg" alt="reinoplantae">
                 <div class="w3-container w3-center">
                     <a href="reinoplantae.html">
                         <p>Reino Plantae</p>
