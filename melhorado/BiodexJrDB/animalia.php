@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="../css/home.css">
+  <link rel="stylesheet" href="./css/home.css">
   <link rel="stylesheet" href="./css/estilo2.css">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
@@ -22,10 +22,12 @@
                       <img src="../img/logo/Logotipo.jpg" alt="" id="logoinicio">
                     </a>
                     <ul class="dropdown-menu">
-                      <li><a class="dropdown-item" href="#">Home</a></li>
+                      <li><a class="dropdown-item" href="index.php">Home</a></li>
                       <li><hr class="dropdown-divider"></li>
-                      <li><a class="dropdown-item" href="#">Login</a></li>
-                      <li><a class="dropdown-item" href="#">Favoritos</a></li>
+                      <li><a class="dropdown-item" href="plantae.php">Plantae</a></li>
+                      <li><a class="dropdown-item" href="monera.php">Monera</a></li>
+                      <li><a class="dropdown-item" href="fungi.php">Fungi</a></li>
+                      <li><a class="dropdown-item" href="protista.php">Protista</a></li>
                     </ul>
                   </li>
                 </ul>
@@ -63,21 +65,21 @@
   //Acessando o BD
   include_once ("conexao.php");
   //Buscando reinos
-  $s1 = 'select distinct reino from animais order by reino asc;';
+  $s1 = 'select distinct cat from animais order by cat asc;';
   $r1 = mysqli_query($conexao, $s1);
   ?>
 
   <div class="conteudo">
     <!-- filtro -->
     <section>
-      <form name="filtro" method="get" action="index.php">
+      <form name="filtro" method="get" action="index.php"> 
         <div class="form-group col-md-6 offset-md-3">
-          <label for="reino" class=" text-center">Reino</label>
-          <select id="reino" name="reino" required="required" class="custom-select">
+          <label for="cat" class=" text-center">Categoria</label>
+          <select id="cat" name="cat" required="required" class="custom-select">
             <option value='todos'>Todos</option>
             <?php
-            while ($reino = mysqli_fetch_assoc($r1)) {
-              $r = $reino['reino'];
+            while ($cat = mysqli_fetch_assoc($r1)) {
+              $r = $cat['cat'];
               echo "<option value = '$r'>$r</option>";
             }
             ?>
@@ -178,52 +180,6 @@
     </section>
     <!-- Fim dos stats do Pokemon, exibidos quando clicamos -->
 </div>";
-
-          //   echo "
-          //   <!-- ######################  Aqui começa o animais ############################# -->
-          //   <div class='animais' tabindex='$id'> 
-          //     <figure class='animais-figure'>
-          //       <img src='img/$id.png' alt='$nome'> <!-- Imagem do animais -->
-          //     </figure>
-          //     <section class='animais-description'>
-          //       <span class='animais-id'>#$id</span> <!-- Número do animais -->
-          //       <h1 class='animais-name'>$nome</h1> <!--Nome do animais -->
-          //       <div class='animais-types'>
-          //         <span class='animais-type background-$reino'>$reino</span> <!-- reino 1 -->
-          //       </div>
-          //     </section>
-          //     <!-- Início dos stats do animais, exibidos quando clicamos -->
-          //       <section class='animais-stats'>
-          //         <div class='stat-row'>
-          //           <div>Nome</div> <!-- Nome -->
-          //           <div class='stat-bar'>
-          //             <div>$nome</div>
-          //           </div>
-          //         </div>
-          //         <div class='stat-row'>
-          //           <div>Reino</div> <!-- Reino -->
-          //           <div class='stat-bar'>
-          //             <div>$reino</div>
-          //           </div>
-          //         </div>
-          //         <div class='stat-row'>
-          //           <div>Categoria</div> <!-- Categoria -->
-          //           <div class='stat-bar'>
-          //             <div>$cat</div>
-          //           </div>
-          //         </div>
-          //         <div class='stat-row'>
-          //           <div>Descricao</div> <!-- Descricao -->
-          //           <div class='stat-bar'>
-          //             <div>$desc</div>
-          //           </div>
-          //         </div>
-          //       </section>
-          //       <!-- Fim dos stats do animais, exibidos quando clicamos -->
-          //   </div>
-          // <!-- ######################### Aqui Termina o animais ####################################-->
-      
-          //   ";
         }
       } else {
         echo "<p>Nenhum animais encontrado.</p>";

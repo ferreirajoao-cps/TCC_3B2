@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="../css/home.css">
+  <link rel="stylesheet" href="./css/home.css">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
   <title>BioDex jr</title>
 </head>
@@ -19,12 +19,11 @@
               <img src="../img/logo/Logotipo.jpg" alt="" id="logoinicio">
             </a>
             <ul class="dropdown-menu">
-              <li><a class="dropdown-item" href="#">Home</a></li>
-              <li>
-                <hr class="dropdown-divider">
-              </li>
-              <li><a class="dropdown-item" href="#">Login</a></li>
-              <li><a class="dropdown-item" href="#">Favoritos</a></li>
+              <li><a class="dropdown-item" href="animalia.php">Animalia</a></li>  
+              <li><a class="dropdown-item" href="plantae.php">Plantae</a></li>
+              <li><a class="dropdown-item" href="monera.php">Monera</a></li>
+              <li><a class="dropdown-item" href="fungi.php">Fungi</a></li>
+              <li><a class="dropdown-item" href="protista.php">Protista</a></li>
             </ul>
           </li>
         </ul>
