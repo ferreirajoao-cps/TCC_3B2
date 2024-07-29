@@ -1,0 +1,26 @@
+#logoinicio{
+    height: 50px;
+    width: 50px;
+}
+nav div{
+    background-color: #009688;
+}
+#cardgroup{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+.card{
+    transition: 0.5s;
+    margin-left: 10px;
+
+}
+.card:hover{
+    transition: 0.5s;
+    box-shadow: 10px 10px 5px -5px rgba(0,0,0,0.51);
+-webkit-box-shadow: 10px 10px 5px -5px rgba(0,0,0,0.51);
+-moz-box-shadow: 10px 10px 5px -5px rgba(0,0,0,0.51);
+}
