@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="../css/home.css">
+  <link rel="stylesheet" href="./css/home.css">
   <link rel="stylesheet" href="./css/estilo2.css">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
@@ -39,7 +39,7 @@
   //Acessando o BD
   include_once ("conexao.php");
   //Buscando reinos
-  $s1 = 'select distinct reino from animais order by reino asc;';
+  $s1 = 'select distinct reino from plantas order by reino asc;';
   $r1 = mysqli_query($conexao, $s1);
   ?>
 
@@ -82,7 +82,7 @@
       $limite = 30;
 
       //Calcula o total de regristros
-      $s = "select * from animais";
+      $s = "select * from plantas";
       $r2 = mysqli_query($conexao, $s);
       $total = mysqli_num_rows($r2);
 
@@ -96,26 +96,27 @@
       //Instrução SQL
       if (isset($_GET['reino']) && $_GET['reino'] != "todos") {
         $reino = $_GET['reino'];
-        $sql = "select * from animais where reino like '%animalia'= '$reino' || reino2='$reino' limit $inicio,$limite ";
+        $sql = "select * from plantas where reino like '%animalia'= '$reino' || reino2='$reino' limit $inicio,$limite ";
       } else {
-        $sql = "select * from animais limit $inicio, $limite;";
+        $sql = "select * from plantas limit $inicio, $limite;";
       }
       //Executando a instrução SQL
       $resultado = mysqli_query($conexao, $sql);
       //Verificando se encontrou resultado
       if (mysqli_num_rows($resultado) > 0) {
-        //Lenda os dados de cada animais
-        while ($animais = mysqli_fetch_assoc($resultado)) {
-          $id = $animais['id'];
-          $nome = $animais['nome'];
-          $reino = $animais['reino'];
-          $cat = $animais['cat'];
-          $desc = $animais['descricao'];
+        //Lenda os dados de cada plantas
+        while ($plantas = mysqli_fetch_assoc($resultado)) {
+          $id = $plantas['id'];
+          $nome = $plantas['nome'];
+          $reino = $plantas['reino'];
+          $grupo = $plantas['grupo'];
+          $tipo = $plantas['tipo'];
+          $desc = $plantas['descricao'];
 
           echo "<!-- ######################  Aqui começa o pokemon ############################# -->
 <div class='pokemon' tabindex='$id'> 
   <figure class='pokemon-figure'>
-    <img src='img/$id.png' alt='$nome'> <!-- Imagem do pokemon -->
+    <img src='img/plantas/$id.png' alt='$nome'> <!-- Imagem do pokemon -->
   </figure>
   <section class='pokemon-description'>
     <span class='pokemon-id'>#$id</span> <!-- Número do pokemon -->
@@ -140,9 +141,15 @@
         </div>
       </div>
       <div class='stat-row'>
-        <div>Categoria</div> <!-- Defesa -->
+        <div>grupo</div> <!-- Defesa -->
         <div class='stat-bar'>
-          <div>$cat</div>
+          <div>$grupo</div>
+        </div>
+      </div>
+      <div class='stat-row'>
+        <div>tipo</div> <!-- Defesa -->
+        <div class='stat-bar'>
+          <div>$tipo</div>
         </div>
       </div>
       <div class='stat-row'>
@@ -156,20 +163,20 @@
 </div>";
 
           //   echo "
-          //   <!-- ######################  Aqui começa o animais ############################# -->
-          //   <div class='animais' tabindex='$id'> 
-          //     <figure class='animais-figure'>
-          //       <img src='img/$id.png' alt='$nome'> <!-- Imagem do animais -->
+          //   <!-- ######################  Aqui começa o plantas ############################# -->
+          //   <div class='plantas' tabindex='$id'> 
+          //     <figure class='plantas-figure'>
+          //       <img src='img/$id.png' alt='$nome'> <!-- Imagem do plantas -->
           //     </figure>
-          //     <section class='animais-description'>
-          //       <span class='animais-id'>#$id</span> <!-- Número do animais -->
-          //       <h1 class='animais-name'>$nome</h1> <!--Nome do animais -->
-          //       <div class='animais-types'>
-          //         <span class='animais-type background-$reino'>$reino</span> <!-- reino 1 -->
+          //     <section class='plantas-description'>
+          //       <span class='plantas-id'>#$id</span> <!-- Número do plantas -->
+          //       <h1 class='plantas-name'>$nome</h1> <!--Nome do plantas -->
+          //       <div class='plantas-types'>
+          //         <span class='plantas-type background-$reino'>$reino</span> <!-- reino 1 -->
           //       </div>
           //     </section>
-          //     <!-- Início dos stats do animais, exibidos quando clicamos -->
-          //       <section class='animais-stats'>
+          //     <!-- Início dos stats do plantas, exibidos quando clicamos -->
+          //       <section class='plantas-stats'>
           //         <div class='stat-row'>
           //           <div>Nome</div> <!-- Nome -->
           //           <div class='stat-bar'>
@@ -183,9 +190,9 @@
           //           </div>
           //         </div>
           //         <div class='stat-row'>
-          //           <div>Categoria</div> <!-- Categoria -->
+          //           <div>grupoegoria</div> <!-- grupoegoria -->
           //           <div class='stat-bar'>
-          //             <div>$cat</div>
+          //             <div>$grupo</div>
           //           </div>
           //         </div>
           //         <div class='stat-row'>
@@ -195,14 +202,14 @@
           //           </div>
           //         </div>
           //       </section>
-          //       <!-- Fim dos stats do animais, exibidos quando clicamos -->
+          //       <!-- Fim dos stats do plantas, exibidos quando clicamos -->
           //   </div>
-          // <!-- ######################### Aqui Termina o animais ####################################-->
+          // <!-- ######################### Aqui Termina o plantas ####################################-->
       
           //   ";
         }
       } else {
-        echo "<p>Nenhum animais encontrado.</p>";
+        echo "<p>Nenhum plantas encontrado.</p>";
       }
       ?>
   </div>

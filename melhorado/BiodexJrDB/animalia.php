@@ -141,7 +141,7 @@
           echo "<!-- ######################  Aqui começa o pokemon ############################# -->
 <div class='pokemon' tabindex='$id'> 
   <figure class='pokemon-figure'>
-    <img src='img/$id.png' alt='$nome'> <!-- Imagem do pokemon -->
+    <img src='img/animais/$id.png' alt='$nome'> <!-- Imagem do pokemon -->
   </figure>
   <section class='pokemon-description'>
     <span class='pokemon-id'>#$id</span> <!-- Número do pokemon -->
