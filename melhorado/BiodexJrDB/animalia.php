@@ -18,7 +18,7 @@
               <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                   <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  <a class="nav-link dropdown-toggle" href="index.php" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                       <img src="../img/logo/Logotipo.jpg" alt="" id="logoinicio">
                     </a>
                     <ul class="dropdown-menu">
@@ -35,31 +35,35 @@
             </div>
           </nav>
     </header>
-<body>
-<h1>Reino Animalia</h1>
-    <section class="texto">
-      <div class="teste">
-        <a href="https://www.todoestudo.com.br/biologia/reino-animal."><h3>O <strong>reino Animalia</strong>, também conhecido como Metazoa, engloba uma grande
-            variedade de
-            organismos vivos que compartilham características como a multicelularidade, a capacidade de
-            resposta
-            ao ambiente e a ingestão de alimentos para obter energia.</h3><br></a><br>
-
-            <h2>Tipos de Animais</h2>
-            <p>Este reino é diversificado e inclui desde pequenos invertebrados, como insetos e moluscos,
-                até
-                grandes mamíferos, como elefantes e baleias. Os animais podem ser encontrados em
-                praticamente
-                todos
-                os ambientes da Terra.
-            </p><br>
-            <h2>Características Comuns</h2><br>
-            <p>Embora haja uma grande diversidade, os animais do reino Animalia geralmente possuem células
-                organizadas em tecidos, órgãos e sistemas. Eles também se reproduzem sexualmente, embora
-                alguns
-                possam se reproduzir assexuadamente.
-           </p></div>
-     </section><br>
+    <body>
+  <!-- <br> -->
+  <div class="imagem">
+  <div class="container">
+    <div class="centro">
+        <h1>Reino Animalia</h1>
+            <a href="https://www.todoestudo.com.br/biologia/reino-animal."><h3>O <strong>reino Animalia</strong>, também conhecido como Metazoa, engloba uma grande
+                    variedade de
+                    organismos vivos que compartilham características como a multicelularidade, a capacidade de
+                    resposta
+                    ao ambiente e a ingestão de alimentos para obter energia.</h3><br></a><br>
+                    <h2>Tipos de Animais</h2>
+                    <p>Este reino é diversificado e inclui desde pequenos invertebrados, como insetos e moluscos,
+                        até
+                        grandes mamíferos, como elefantes e baleias. Os animais podem ser encontrados em
+                        praticamente
+                        todos
+                        os ambientes da Terra.
+                    </p><br>
+                    <h2>Características Comuns</h2><br>
+                    <p>Embora haja uma grande diversidade, os animais do reino Animalia geralmente possuem células
+                        organizadas em tecidos, órgãos e sistemas. Eles também se reproduzem sexualmente, embora
+                        alguns
+                        possam se reproduzir assexuadamente.
+              </p>
+         </div>
+    </div>
+</div>
+  <br>
   <br>
   <?php
   //Acessando o BD

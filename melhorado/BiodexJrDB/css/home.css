@@ -2,9 +2,9 @@
     height: 50px;
     width: 50px;
 }
-nav div{
+/* nav div{
     background-color: #009688;
-}
+} */
 #cardgroup{
     width: 100%;
     display: flex;
@@ -24,3 +24,4 @@ nav div{
 -webkit-box-shadow: 10px 10px 5px -5px rgba(0,0,0,0.51);
 -moz-box-shadow: 10px 10px 5px -5px rgba(0,0,0,0.51);
 }
+
