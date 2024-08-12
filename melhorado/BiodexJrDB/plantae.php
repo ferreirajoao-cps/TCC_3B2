@@ -5,36 +5,74 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="./css/home.css">
-  <link rel="stylesheet" href="./css/estilo2.css">
+  <link rel="stylesheet" href="./css/estilo3.css">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
   <link rel="icon" href="favicon.ico">
   <title>BiodexJr</title>
-</head>
-<header>
+  <header>
+  <nav class="navbar navbar-expand-lg bg-body-tertiary">
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="index.php" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            <img src="../img/logo/Logotipo.jpg" alt="" id="logoinicio">
+          </a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="index.php">Home</a></li>
+            <li>
+              <hr class="dropdown-divider">
+            </li>
+            <li><a class="dropdown-item" href="animalia.php">Animalia</a></li>
+            <li><a class="dropdown-item" href="monera.php">Monera</a></li>
+            <li><a class="dropdown-item" href="fungi.php">Fungi</a></li>
+            <li><a class="dropdown-item" href="protista.php">Protista</a></li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+    </div>
+  </nav>
+</header>
         <nav class="navbar navbar-expand-lg bg-body-tertiary">
               <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                  <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                      <img src="../img/logo/Logotipo.jpg" alt="" id="logoinicio">
-                    </a>
-                    <ul class="dropdown-menu">
-                      <li><a class="dropdown-item" href="#">Home</a></li>
-                      <li><hr class="dropdown-divider"></li>
-                      <li><a class="dropdown-item" href="#">Login</a></li>
-                      <li><a class="dropdown-item" href="#">Favoritos</a></li>
-                    </ul>
-                  </li>
-                </ul>
+              <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="index.php">Home</a></li>
+            <li>
+              <hr class="dropdown-divider">
+            </li>
+            <li><a class="dropdown-item" href="animalia.php">Animalia</a></li>
+            <li><a class="dropdown-item" href="monera.php">Monera</a></li>
+            <li><a class="dropdown-item" href="fungi.php">Fungi</a></li>
+            <li><a class="dropdown-item" href="protista.php">Protista</a></li>
+          </ul>
               </div>
             </div>
           </nav>
     </header>
 <body>
   <br>
+  <div class="imagem">
+    <div class="container">
+      <div class="centro">
+        <h1>Reino Plantae</h1>
+        <a href="https://brasilescola.uol.com.br/biologia/reino-plantae.htm#:~:text=Os%20organismos%20do%20Reino%20Plantae,e%20cloroplastos%20em%20seu%20interior.">
+          <h3>O <strong>Reino Plantae</strong>, é o reino das plantas. Elas são seres vivos muito importantes para o nosso planeta.</h3><br>
+        </a>
+        <h2>Características Comuns</h2>
+        <p>Fazem a própria comida: As plantas usam a luz do sol para transformar água e gás carbônico em alimento. Esse processo se chama fotossíntese.
+        São fixas: As plantas ficam no mesmo lugar, diferente dos animais que se locomovem.
+        Têm raiz, caule e folhas: A raiz prende a planta no solo e absorve água e nutrientes. O caule sustenta a planta e transporta essas substâncias para as folhas. As folhas capturam a luz do sol para a fotossíntese.
+        </p><br>
+        <h2>Importantes</h2><br>
+        <p>Elas são essenciais para a vida na Terra, pois produzem o oxigênio que respiramos e servem de alimento para muitos seres vivos.
+        </p>
+      </div>
+    </div>
+  </div>
+
   <?php
   //Acessando o BD
   include_once ("conexao.php");
@@ -44,27 +82,6 @@
   ?>
 
   <div class="conteudo">
-    <!-- filtro -->
-    <section>
-      <form name="filtro" method="get" action="index.php">
-        <div class="form-group col-md-6 offset-md-3">
-          <label for="reino" class=" text-center">Reino</label>
-          <select id="reino" name="reino" required="required" class="custom-select">
-            <option value='todos'>Todos</option>
-            <?php
-            while ($reino = mysqli_fetch_assoc($r1)) {
-              $r = $reino['reino'];
-              echo "<option value = '$r'>$r</option>";
-            }
-            ?>
-          </select>
-        </div>
-        <div class="form-group col-md-6 offset-md-3 text-center">
-          <button name="submit" type="submit" class="btn btn-success">Filtrar</button>
-        </div>
-      </form>
-    </section>
-
 
     <section class="pokedex">
       <?php

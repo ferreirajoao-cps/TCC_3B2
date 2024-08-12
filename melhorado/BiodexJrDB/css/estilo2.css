@@ -259,15 +259,20 @@
   justify-content: center;
   align-items: center;
 }
+
 .centro {
-  background-color: #f2f2f28f;
+  background-color: #f2f2f2a8;
   text-align: center;
   border: 3px solid black;
   border-radius: 45px;
   /* width: 40%; */
 }
 
+.centro p{
+  font-size: 25px;
+}
+
 .imagem{
   background-image: url(../img/bg/bg.png);
-  opacity: 3.5;
+  opacity: 8.5;
 }

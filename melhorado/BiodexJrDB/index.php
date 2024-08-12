@@ -94,7 +94,7 @@
         <div class="card-body">
           <h5 class="card-title">Reino Monera</h5>
           <p class="card-text">Composto por bactérias e algas azuis.</p>
-          <a href="reinomonera.html" class="btn btn-success">Ver Mais</a>
+          <a href="monera.php" class="btn btn-success">Ver Mais</a>
         </div>
       </div>
       <div class="card" style="width: 18rem;">

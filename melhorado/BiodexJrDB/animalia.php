@@ -6,95 +6,78 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="./css/home.css">
   <link rel="stylesheet" href="./css/estilo2.css">
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
-    integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
   <link rel="icon" href="favicon.ico">
   <title>BiodexJr</title>
 </head>
 <header>
-        <nav class="navbar navbar-expand-lg bg-body-tertiary">
-              <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                  <li class="nav-item dropdown">
-                  <a class="nav-link dropdown-toggle" href="index.php" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                      <img src="../img/logo/Logotipo.jpg" alt="" id="logoinicio">
-                    </a>
-                    <ul class="dropdown-menu">
-                      <li><a class="dropdown-item" href="index.php">Home</a></li>
-                      <li><hr class="dropdown-divider"></li>
-                      <li><a class="dropdown-item" href="plantae.php">Plantae</a></li>
-                      <li><a class="dropdown-item" href="monera.php">Monera</a></li>
-                      <li><a class="dropdown-item" href="fungi.php">Fungi</a></li>
-                      <li><a class="dropdown-item" href="protista.php">Protista</a></li>
-                    </ul>
-                  </li>
-                </ul>
-              </div>
-            </div>
-          </nav>
-    </header>
-    <body>
+  <nav class="navbar navbar-expand-lg bg-body-tertiary">
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="index.php" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            <img src="../img/logo/Logotipo.jpg" alt="" id="logoinicio">
+          </a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="index.php">Home</a></li>
+            <li>
+              <hr class="dropdown-divider">
+            </li>
+            <li><a class="dropdown-item" href="plantae.php">Plantae</a></li>
+            <li><a class="dropdown-item" href="monera.php">Monera</a></li>
+            <li><a class="dropdown-item" href="fungi.php">Fungi</a></li>
+            <li><a class="dropdown-item" href="protista.php">Protista</a></li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+    </div>
+  </nav>
+</header>
+
+<body>
   <!-- <br> -->
   <div class="imagem">
-  <div class="container">
-    <div class="centro">
+    <div class="container">
+      <div class="centro">
         <h1>Reino Animalia</h1>
-            <a href="https://www.todoestudo.com.br/biologia/reino-animal."><h3>O <strong>reino Animalia</strong>, também conhecido como Metazoa, engloba uma grande
-                    variedade de
-                    organismos vivos que compartilham características como a multicelularidade, a capacidade de
-                    resposta
-                    ao ambiente e a ingestão de alimentos para obter energia.</h3><br></a><br>
-                    <h2>Tipos de Animais</h2>
-                    <p>Este reino é diversificado e inclui desde pequenos invertebrados, como insetos e moluscos,
-                        até
-                        grandes mamíferos, como elefantes e baleias. Os animais podem ser encontrados em
-                        praticamente
-                        todos
-                        os ambientes da Terra.
-                    </p><br>
-                    <h2>Características Comuns</h2><br>
-                    <p>Embora haja uma grande diversidade, os animais do reino Animalia geralmente possuem células
-                        organizadas em tecidos, órgãos e sistemas. Eles também se reproduzem sexualmente, embora
-                        alguns
-                        possam se reproduzir assexuadamente.
-              </p>
-         </div>
+        <a href="https://www.todoestudo.com.br/biologia/reino-animal.">
+          <h3>O <strong>reino Animalia</strong>, também conhecido como Metazoa, engloba uma grande
+            variedade de
+            organismos vivos que compartilham características como a multicelularidade, a capacidade de
+            resposta
+            ao ambiente e a ingestão de alimentos para obter energia.</h3><br>
+        </a><br>
+        <h2>Tipos de Animais</h2>
+        <p>Este reino é diversificado e inclui desde pequenos invertebrados, como insetos e moluscos,
+          até
+          grandes mamíferos, como elefantes e baleias. Os animais podem ser encontrados em
+          praticamente
+          todos
+          os ambientes da Terra.
+        </p><br>
+        <h2>Características Comuns</h2><br>
+        <p>Embora haja uma grande diversidade, os animais do reino Animalia geralmente possuem células
+          organizadas em tecidos, órgãos e sistemas. Eles também se reproduzem sexualmente, embora
+          alguns
+          possam se reproduzir assexuadamente.
+        </p>
+      </div>
     </div>
-</div>
+  </div>
   <br>
   <br>
   <?php
   //Acessando o BD
-  include_once ("conexao.php");
+  include_once("conexao.php");
   //Buscando reinos
   $s1 = 'select distinct cat from animais order by cat asc;';
   $r1 = mysqli_query($conexao, $s1);
   ?>
 
   <div class="conteudo">
-    <!-- filtro -->
-    <section>
-      <form name="filtro" method="get" action="index.php"> 
-        <div class="form-group col-md-6 offset-md-3">
-          <label for="cat" class=" text-center">Categoria</label>
-          <select id="cat" name="cat" required="required" class="custom-select">
-            <option value='todos'>Todos</option>
-            <?php
-            while ($cat = mysqli_fetch_assoc($r1)) {
-              $r = $cat['cat'];
-              echo "<option value = '$r'>$r</option>";
-            }
-            ?>
-          </select>
-        </div>
-        <div class="form-group col-md-6 offset-md-3 text-center">
-          <button name="submit" type="submit" class="btn btn-success">Filtrar</button>
-        </div>
-      </form>
-    </section>
-
 
     <section class="pokedex">
       <?php
@@ -214,9 +197,7 @@
   </div>
 
 
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
-    integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
-    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 
 
 </body>
