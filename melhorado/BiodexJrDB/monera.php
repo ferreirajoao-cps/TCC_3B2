@@ -47,8 +47,9 @@
           <h3>O <strong>Reino Monera</strong>, engloba uma vasta diversidade de seres vivos unicelulares, procariontes e microscópicos. Esses organismos são considerados os mais antigos da Terra e desempenham um papel fundamental nos ecossistemas.</h3><br>
         </a>
         <h2>Características Comuns</h2>
-        <p>Células sem núcleo: Seu material genético fica disperso no citoplasma da célula.
-Diversidade na alimentação: Alguns moneras produzem seu próprio alimento (autótrofos), enquanto outros se alimentam de outros organismos (heterótrofos). Reprodução rápida: Se multiplicam por divisão, onde uma célula se divide em duas. Habitats variados: Podem ser encontrados em praticamente todos os ambientes da Terra.
+        <p>Exemplos de organismos procariontes: Bactérias, arqueas e cianobactérias. 
+          Importância dos procariontes: Seu papel na natureza, na indústria e na saúde humana.
+          Diferenças entre células procariontes e eucariontes: Comparação entre células simples e complexas.
         </p><br>
         <h2>Tipos de Moneras:</h2><br>
         <p>Bactérias: São os mais famosos. Algumas causam doenças, mas muitas outras são importantes para a natureza e até para a gente, como as que ajudam a fazer iogurte e queijo.

@@ -265,6 +265,7 @@
   text-align: center;
   border: 3px solid black;
   border-radius: 45px;
+  margin-top: 90px;
   /* width: 40%; */
 }
 
@@ -274,5 +275,6 @@
 
 .imagem{
   background-image: url(../img/bg/bg.png);
+  height: 700px;
   opacity: 8.5;
 }
