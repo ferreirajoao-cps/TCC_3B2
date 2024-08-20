@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 30/07/2024 às 20:17
+-- Tempo de geração: 20/08/2024 às 18:24
 -- Versão do servidor: 10.4.32-MariaDB
 -- Versão do PHP: 8.2.12
 
@@ -20,6 +20,41 @@ SET time_zone = "+00:00";
 --
 -- Banco de dados: `biodexjrdb`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura para tabela `animais`
+--
+
+CREATE TABLE `animais` (
+  `id` int(5) NOT NULL,
+  `nome` varchar(20) NOT NULL,
+  `reino` varchar(13) NOT NULL,
+  `cat` char(13) DEFAULT NULL,
+  `descricao` varchar(150) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Despejando dados para a tabela `animais`
+--
+
+INSERT INTO `animais` (`id`, `nome`, `reino`, `cat`, `descricao`) VALUES
+(1, 'Leão', 'Animalia', 'Mamífero', 'Filo: Chordata Classe: Mammalia'),
+(2, 'Águia', 'Animalia', 'Ave', 'Filo: Chordata Classe: Aves'),
+(3, 'Tubarão', 'Animalia', 'Peixe', 'Filo: Chordata Classe: Chondrichthyes'),
+(4, 'Elefante', 'Animalia', 'Mamífero', 'Filo: Chordata Classe: Mammalia'),
+(5, 'Falcão', 'Animalia', 'Ave', 'Filo: Chordata Classe: Aves'),
+(6, 'Salmão', 'Animalia', 'Peixe', 'Filo: Chordata Classe: Actinopterygii'),
+(7, 'Urso', 'Animalia', 'Mamífero', 'Filo: Chordata Classe: Mammalia'),
+(8, 'Coruja', 'Animalia', 'Ave', 'Filo: Chordata Classe: Aves'),
+(9, 'Baleia', 'Animalia', 'Mamífero', 'Filo: Chordata Classe: Mammalia'),
+(10, 'Pinguim', 'Animalia', 'Ave', 'Filo: Chordata Classe: Aves'),
+(11, 'Atum', 'Animalia', 'Peixe', 'Filo: Chordata Classe: Actinopterygii'),
+(12, 'Carpa', 'Animalia', 'Peixe', 'Filo: Chordata Classe: Actinopterygii'),
+(13, 'Bagre', 'Animalia', 'Peixe', 'Filo: Chordata Classe: Actinopterygii'),
+(14, 'Dourado', 'Animalia', 'Peixe', 'Filo: Chordata Classe: Actinopterygii'),
+(15, 'Pacu', 'Animalia', 'Peixe', 'Filo: Chordata Classe: Actinopterygii');
 
 -- --------------------------------------------------------
 
@@ -62,10 +97,26 @@ INSERT INTO `plantas` (`id`, `nome`, `reino`, `grupo`, `tipo`, `descricao`) VALU
 --
 
 --
+-- Índices de tabela `animais`
+--
+ALTER TABLE `animais`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Índices de tabela `plantas`
 --
 ALTER TABLE `plantas`
   ADD PRIMARY KEY (`id`);
+
+--
+-- AUTO_INCREMENT para tabelas despejadas
+--
+
+--
+-- AUTO_INCREMENT de tabela `animais`
+--
+ALTER TABLE `animais`
+  MODIFY `id` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
