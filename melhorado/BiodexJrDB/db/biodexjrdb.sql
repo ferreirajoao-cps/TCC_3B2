@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 20/08/2024 às 18:24
+-- Tempo de geração: 02/09/2024 às 22:31
 -- Versão do servidor: 10.4.32-MariaDB
 -- Versão do PHP: 8.2.12
 
@@ -26,6 +26,10 @@ SET time_zone = "+00:00";
 --
 -- Estrutura para tabela `animais`
 --
+
+CREATE DATABASE biodexjrdb;
+
+USE biodexjrdb;
 
 CREATE TABLE `animais` (
   `id` int(5) NOT NULL,
@@ -54,7 +58,11 @@ INSERT INTO `animais` (`id`, `nome`, `reino`, `cat`, `descricao`) VALUES
 (12, 'Carpa', 'Animalia', 'Peixe', 'Filo: Chordata Classe: Actinopterygii'),
 (13, 'Bagre', 'Animalia', 'Peixe', 'Filo: Chordata Classe: Actinopterygii'),
 (14, 'Dourado', 'Animalia', 'Peixe', 'Filo: Chordata Classe: Actinopterygii'),
-(15, 'Pacu', 'Animalia', 'Peixe', 'Filo: Chordata Classe: Actinopterygii');
+(15, 'Pacu', 'Animalia', 'Peixe', 'Filo: Chordata Classe: Actinopterygii'),
+(16, '', '', '', ''),
+(17, '', '', '', ''),
+(18, '', '', '', ''),
+(19, '', '', '', '');
 
 -- --------------------------------------------------------
 
@@ -92,6 +100,18 @@ INSERT INTO `plantas` (`id`, `nome`, `reino`, `grupo`, `tipo`, `descricao`) VALU
 (14, 'Babosa', 'Plantae', 'Angiospermas', 'Suculenta', 'Planta medicinal com folhas suculentas'),
 (15, 'Avenca', 'Plantae', 'Pteridófitas', 'Erva', 'Feto delicado, cultivado em ambientes');
 
+-- --------------------------------------------------------
+
+--
+-- Estrutura para tabela `tbusuarios`
+--
+
+CREATE TABLE `tbusuarios` (
+  `id` int(11) NOT NULL,
+  `usuario` varchar(20) NOT NULL,
+  `senha` varchar(20) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
 --
 -- Índices para tabelas despejadas
 --
@@ -109,6 +129,12 @@ ALTER TABLE `plantas`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Índices de tabela `tbusuarios`
+--
+ALTER TABLE `tbusuarios`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- AUTO_INCREMENT para tabelas despejadas
 --
 
@@ -116,7 +142,13 @@ ALTER TABLE `plantas`
 -- AUTO_INCREMENT de tabela `animais`
 --
 ALTER TABLE `animais`
-  MODIFY `id` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
+  MODIFY `id` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
+
+--
+-- AUTO_INCREMENT de tabela `tbusuarios`
+--
+ALTER TABLE `tbusuarios`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
