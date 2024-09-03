@@ -27,14 +27,11 @@ SET time_zone = "+00:00";
 -- Estrutura para tabela `animais`
 --
 
-CREATE DATABASE biodexjrdb;
-
 USE biodexjrdb;
 
 CREATE TABLE `animais` (
-  `id` int(5) NOT NULL,
+  `id` int(5) NOT NULL AUTO_INCREMENT,
   `nome` varchar(20) NOT NULL,
-  `reino` varchar(13) NOT NULL,
   `cat` char(13) DEFAULT NULL,
   `descricao` varchar(150) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
@@ -43,26 +40,23 @@ CREATE TABLE `animais` (
 -- Despejando dados para a tabela `animais`
 --
 
-INSERT INTO `animais` (`id`, `nome`, `reino`, `cat`, `descricao`) VALUES
-(1, 'Leão', 'Animalia', 'Mamífero', 'Filo: Chordata Classe: Mammalia'),
-(2, 'Águia', 'Animalia', 'Ave', 'Filo: Chordata Classe: Aves'),
-(3, 'Tubarão', 'Animalia', 'Peixe', 'Filo: Chordata Classe: Chondrichthyes'),
-(4, 'Elefante', 'Animalia', 'Mamífero', 'Filo: Chordata Classe: Mammalia'),
-(5, 'Falcão', 'Animalia', 'Ave', 'Filo: Chordata Classe: Aves'),
-(6, 'Salmão', 'Animalia', 'Peixe', 'Filo: Chordata Classe: Actinopterygii'),
-(7, 'Urso', 'Animalia', 'Mamífero', 'Filo: Chordata Classe: Mammalia'),
-(8, 'Coruja', 'Animalia', 'Ave', 'Filo: Chordata Classe: Aves'),
-(9, 'Baleia', 'Animalia', 'Mamífero', 'Filo: Chordata Classe: Mammalia'),
-(10, 'Pinguim', 'Animalia', 'Ave', 'Filo: Chordata Classe: Aves'),
-(11, 'Atum', 'Animalia', 'Peixe', 'Filo: Chordata Classe: Actinopterygii'),
-(12, 'Carpa', 'Animalia', 'Peixe', 'Filo: Chordata Classe: Actinopterygii'),
-(13, 'Bagre', 'Animalia', 'Peixe', 'Filo: Chordata Classe: Actinopterygii'),
-(14, 'Dourado', 'Animalia', 'Peixe', 'Filo: Chordata Classe: Actinopterygii'),
-(15, 'Pacu', 'Animalia', 'Peixe', 'Filo: Chordata Classe: Actinopterygii'),
-(16, '', '', '', ''),
-(17, '', '', '', ''),
-(18, '', '', '', ''),
-(19, '', '', '', '');
+INSERT INTO `animais` (`id`, `nome`, `cat`, `descricao`) VALUES
+(1, 'Leão','Mamífero', 'Reino: Animaila Filo: Chordata Classe: Mammalia'),
+(2, 'Águia','Ave', 'Reino: Animaila Filo: Chordata Classe: Aves'),
+(3, 'Tubarão','Peixe', 'Reino: Animaila Filo: Chordata Classe: Chondrichthyes'),
+(4, 'Elefante','Mamífero', 'Reino: Animaila Filo: Chordata Classe: Mammalia'),
+(5, 'Falcão','Ave', 'Reino: Animaila Filo: Chordata Classe: Aves'),
+(6, 'Salmão','Peixe', 'Reino: Animaila Filo: Chordata Classe: Actinopterygii'),
+(7, 'Urso','Mamífero', 'Reino: Animaila Filo: Chordata Classe: Mammalia'),
+(8, 'Coruja','Ave', 'Reino: Animaila Filo: Chordata Classe: Aves'),
+(9, 'Baleia','Mamífero', 'Reino: Animaila Filo: Chordata Classe: Mammalia'),
+(10, 'Pinguim','Ave', 'Reino: Animaila Filo: Chordata Classe: Aves'),
+(11, 'Atum','Peixe', 'Reino: Animaila Filo: Chordata Classe: Actinopterygii'),
+(12, 'Carpa','Peixe', 'Reino: Animaila Filo: Chordata Classe: Actinopterygii'),
+(13, 'Bagre','Peixe', 'Reino: Animaila Filo: Chordata Classe: Actinopterygii'),
+(14, 'Dourado','Peixe', 'Reino: Animaila Filo: Chordata Classe: Actinopterygii'),
+(15, 'Pacu','Peixe', 'Reino: Animaila Filo: Chordata Classe: Actinopterygii'),
+
 
 -- --------------------------------------------------------
 
@@ -71,9 +65,8 @@ INSERT INTO `animais` (`id`, `nome`, `reino`, `cat`, `descricao`) VALUES
 --
 
 CREATE TABLE `plantas` (
-  `id` int(11) NOT NULL,
+  `id` int(11) NOT NULL AUTO_INCREMENT,
   `nome` varchar(120) NOT NULL,
-  `reino` varchar(15) NOT NULL,
   `grupo` varchar(20) NOT NULL,
   `tipo` varchar(15) NOT NULL,
   `descricao` varchar(120) NOT NULL
@@ -83,22 +76,22 @@ CREATE TABLE `plantas` (
 -- Despejando dados para a tabela `plantas`
 --
 
-INSERT INTO `plantas` (`id`, `nome`, `reino`, `grupo`, `tipo`, `descricao`) VALUES
-(1, 'Vitória-régia', 'Plantae', 'Angiospermas', 'Hidrófita', 'Maior ninfeia do mundo, com folhas circulares'),
-(2, 'Bromélia', 'Plantae', 'Angiospermas', 'Epífita', 'Planta tropical com folhas em roseta'),
-(3, 'Orquídea', 'Plantae', 'Angiospermas', 'Epífita', 'Planta com flores exóticas e variadas'),
-(4, 'Samambaia-de-pedra', 'Plantae', 'Pteridófitas', 'Litófita', 'Feto que cresce em fendas de rochas'),
-(5, 'Lótus', 'Plantae', 'Angiospermas', 'Hidrófita', 'Planta aquática com flores belas'),
-(6, 'Musgo', 'Plantae', 'Briófitas', 'Epífita/Litófit', 'Planta pequena e sem vasos condutores'),
-(7, 'Cacto', 'Plantae', 'Angiospermas', 'Xerófita/Litófi', 'Planta suculenta adaptada a climas secos'),
-(8, 'Mangue', 'Plantae', 'Angiospermas', 'Hidrófita', 'Árvore adaptada a ambientes salinos'),
-(9, 'Pinheiro', 'Plantae', 'Gimnospermas', 'Árvore', 'Conífera de folhas aciculares'),
-(10, 'Rosa', 'Plantae', 'Angiospermas', 'Arbusto', 'Planta florífera com espinhos'),
+INSERT INTO `plantas` (`id`, `nome`, `grupo`, `tipo`, `descricao`) VALUES
+(1, 'Vitória-régia', 'Angiospermas', 'Hidrófita', 'Maior ninfeia do mundo, com folhas circulares'),
+(2, 'Bromélia', 'Angiospermas', 'Epífita', 'Planta tropical com folhas em roseta'),
+(3, 'Orquídea', 'Angiospermas', 'Epífita', 'Planta com flores exóticas e variadas'),
+(4, 'Samambaia-de-pedra', 'Pteridófitas', 'Litófita', 'Feto que cresce em fendas de rochas'),
+(5, 'Lótus', 'Angiospermas', 'Hidrófita', 'Planta aquática com flores belas'),
+(6, 'Musgo', 'Briófitas', 'Epífita/Litófit', 'Planta pequena e sem vasos condutores'),
+(7, 'Cacto', 'Angiospermas', 'Xerófita/Litófi', 'Planta suculenta adaptada a climas secos'),
+(8, 'Mangue', 'Angiospermas', 'Hidrófita', 'Árvore adaptada a ambientes salinos'),
+(9, 'Pinheiro', 'Gimnospermas', 'Árvore', 'Conífera de folhas aciculares'),
+(10, 'Rosa', 'Angiospermas', 'Arbusto', 'Planta florífera com espinhos'),
 (11, 'Bonsai', 'Várias espécies', 'Várias', 'Árvore/Arbusto/', 'Planta cultivada em vasos, com o crescimento controlado para adquirir formas ornamentais.'),
-(12, 'Capim-grama', 'Plantae', 'Angiospermas', 'Erva', 'Planta tropical com tronco único'),
-(13, 'Palmeira', 'Plantae', 'Angiospermas', 'Árvore', 'Planta tropical com tronco único'),
-(14, 'Babosa', 'Plantae', 'Angiospermas', 'Suculenta', 'Planta medicinal com folhas suculentas'),
-(15, 'Avenca', 'Plantae', 'Pteridófitas', 'Erva', 'Feto delicado, cultivado em ambientes');
+(12, 'Capim-grama', 'Angiospermas', 'Erva', 'Planta tropical com tronco único'),
+(13, 'Palmeira', 'Angiospermas', 'Árvore', 'Planta tropical com tronco único'),
+(14, 'Babosa', 'Angiospermas', 'Suculenta', 'Planta medicinal com folhas suculentas'),
+(15, 'Avenca', 'Pteridófitas', 'Erva', 'Feto delicado, cultivado em ambientes');
 
 -- --------------------------------------------------------
 

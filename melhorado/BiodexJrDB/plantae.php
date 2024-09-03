@@ -77,7 +77,7 @@
   //Acessando o BD
   include_once ("conexao.php");
   //Buscando reinos
-  $s1 = 'select distinct reino from plantas order by reino asc;';
+  $s1 = 'select distinct grupo from plantas order by grupo asc;';
   $r1 = mysqli_query($conexao, $s1);
   ?>
 
@@ -111,9 +111,9 @@
 
 
       //Instrução SQL
-      if (isset($_GET['reino']) && $_GET['reino'] != "todos") {
-        $reino = $_GET['reino'];
-        $sql = "select * from plantas where reino like '%animalia'= '$reino' || reino2='$reino' limit $inicio,$limite ";
+      if (isset($_GET['grupo']) && $_GET['grupo'] != "todos") {
+        $grupo = $_GET['grupo'];
+        $sql = "select * from plantas where grupo like '%animalia'= '$grupo' limit $inicio,$limite ";
       } else {
         $sql = "select * from plantas limit $inicio, $limite;";
       }
@@ -125,7 +125,6 @@
         while ($plantas = mysqli_fetch_assoc($resultado)) {
           $id = $plantas['id'];
           $nome = $plantas['nome'];
-          $reino = $plantas['reino'];
           $grupo = $plantas['grupo'];
           $tipo = $plantas['tipo'];
           $desc = $plantas['descricao'];
@@ -138,9 +137,6 @@
   <section class='pokemon-description'>
     <span class='pokemon-id'>#$id</span> <!-- Número do pokemon -->
     <h1 class='pokemon-name'>$nome</h1> <!--Nome do pokemon -->
-    <div class='pokemon-types'>
-      <span class='pokemon-type background-$reino'>$reino</span> <!-- Tipo 1 -->
-    </div>
   </section>
   <!-- Início dos stats do Pokemon, exibidos quando clicamos -->
   <br>
@@ -149,12 +145,6 @@
         <div>Nome</div> <!-- Vida -->
         <div class='stat-bar'>
           <div>$nome</div>
-        </div>
-      </div>
-      <div class='stat-row'>
-        <div>Reino</div> <!-- Ataque -->
-        <div class='stat-bar'>
-          <div>$reino</div>
         </div>
       </div>
       <div class='stat-row'>

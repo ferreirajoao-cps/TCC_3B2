@@ -107,9 +107,9 @@
 
 
       //Instrução SQL
-      if (isset($_GET['reino']) && $_GET['reino'] != "todos") {
-        $reino = $_GET['reino'];
-        $sql = "select * from animais where reino like '%animalia'= '$reino' || reino2='$reino' limit $inicio,$limite ";
+      if (isset($_GET['descricao']) && $_GET['descricao'] != "todos") {
+        $descr = $_GET['descricao'];
+        $sql = "select * from animais where descricao like '%animalia'= '$desc' || descricao2='$desc' limit $inicio,$limite ";
       } else {
         $sql = "select * from animais limit $inicio, $limite;";
       }
@@ -121,7 +121,6 @@
         while ($animais = mysqli_fetch_assoc($resultado)) {
           $id = $animais['id'];
           $nome = $animais['nome'];
-          $reino = $animais['reino'];
           $cat = $animais['cat'];
           $desc = $animais['descricao'];
 
@@ -133,9 +132,6 @@
   <section class='pokemon-description'>
     <span class='pokemon-id'>#$id</span> <!-- Número do pokemon -->
     <h1 class='pokemon-name'>$nome</h1> <!--Nome do pokemon -->
-    <div class='pokemon-types'>
-      <span class='pokemon-type background-$reino'>$reino</span> <!-- Tipo 1 -->
-    </div>
   </section>
   <!-- Início dos stats do Pokemon, exibidos quando clicamos -->
   <br>
@@ -144,12 +140,6 @@
         <div>Nome</div> <!-- Vida -->
         <div class='stat-bar'>
           <div>$nome</div>
-        </div>
-      </div>
-      <div class='stat-row'>
-        <div>Reino</div> <!-- Ataque -->
-        <div class='stat-bar'>
-          <div>$reino</div>
         </div>
       </div>
       <div class='stat-row'>
