@@ -40,21 +40,18 @@
       </div>
       <div class="carousel-inner">
         <div class="carousel-item active">
-          <img src="../img/banner/BannerGoodPay2.png" class="d-block w-100" alt="...">
+          <img src="./img/imgCarrosel/01.png" class="d-block w-100" alt="...">
           <div class="carousel-caption d-none d-md-block">
-            <h5>Biologia</h5>
           </div>
         </div>
         <div class="carousel-item">
-          <img src="../img/banner/BannerGoodPay.png" class="d-block w-100" alt="...">
+          <img src="./img/imgCarrosel/02.png" class="d-block w-100" alt="...">
           <div class="carousel-caption d-none d-md-block">
-            <h5>Evolução Biológica</h5>
           </div>
         </div>
         <div class="carousel-item">
-          <img src="../img/banner/BannerGoodPay6assinatura.png" class="d-block w-100" alt="...">
+          <img src="./img/imgCarrosel/03.png" class="d-block w-100" alt="...">
           <div class="carousel-caption d-none d-md-block">
-            <h5>Evolução</h5>
           </div>
         </div>
       </div>

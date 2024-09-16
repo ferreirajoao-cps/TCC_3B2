@@ -24,7 +24,7 @@
         <input type="email" id="email" name="u" required placeholder="Digite seu usuário" autofocus="true" />
         <label for="email">Password</label>
         <input type="password" required placeholder="Password" autofocus="true" />
-        <button type="submit" class="submitbtn">Acessar</button> 
+       <a href="index.php"><button type="submit" class="submitbtn">Acessar</button></a>
       </div>
        
             <!-- <label for="email">Usuário</label>
@@ -51,7 +51,7 @@
                         }else{
                             session_start();
                             $_SESSION['usuario']=$u;
-                            header("location:index2.php");
+                            header("location:index.php");
                         }
                     }
                 

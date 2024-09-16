@@ -27,10 +27,12 @@ SET time_zone = "+00:00";
 -- Estrutura para tabela `animais`
 --
 
+  -- CREATE DATABASE  biodexjrdb;
+
 USE biodexjrdb;
 
 CREATE TABLE `animais` (
-  `id` int(5) NOT NULL AUTO_INCREMENT,
+  `id` int(5) NOT NULL AUTO_INCREMENT PRIMARY KEY,
   `nome` varchar(20) NOT NULL,
   `cat` char(13) DEFAULT NULL,
   `descricao` varchar(150) NOT NULL
@@ -65,7 +67,7 @@ INSERT INTO `animais` (`id`, `nome`, `cat`, `descricao`) VALUES
 --
 
 CREATE TABLE `plantas` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `id` int(11) NOT NULL AUTO_INCREMENT PRIMARY KEY,
   `nome` varchar(120) NOT NULL,
   `grupo` varchar(20) NOT NULL,
   `tipo` varchar(15) NOT NULL,
@@ -87,7 +89,7 @@ INSERT INTO `plantas` (`id`, `nome`, `grupo`, `tipo`, `descricao`) VALUES
 (8, 'Mangue', 'Angiospermas', 'Hidrófita', 'Árvore adaptada a ambientes salinos'),
 (9, 'Pinheiro', 'Gimnospermas', 'Árvore', 'Conífera de folhas aciculares'),
 (10, 'Rosa', 'Angiospermas', 'Arbusto', 'Planta florífera com espinhos'),
-(11, 'Bonsai', 'Várias espécies', 'Várias', 'Árvore/Arbusto/', 'Planta cultivada em vasos, com o crescimento controlado para adquirir formas ornamentais.'),
+(11, 'Bonsai', 'Várias espécies', 'Árvore/Arbusto/', 'Planta cultivada em vasos, com o crescimento controlado para adquirir formas ornamentais.'),
 (12, 'Capim-grama', 'Angiospermas', 'Erva', 'Planta tropical com tronco único'),
 (13, 'Palmeira', 'Angiospermas', 'Árvore', 'Planta tropical com tronco único'),
 (14, 'Babosa', 'Angiospermas', 'Suculenta', 'Planta medicinal com folhas suculentas'),
@@ -100,7 +102,7 @@ INSERT INTO `plantas` (`id`, `nome`, `grupo`, `tipo`, `descricao`) VALUES
 --
 
 CREATE TABLE `tbusuarios` (
-  `id` int(11) NOT NULL,
+  `id` int(11) NOT NULL PRIMARY KEY,
   `usuario` varchar(20) NOT NULL,
   `senha` varchar(20) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
@@ -112,20 +114,20 @@ CREATE TABLE `tbusuarios` (
 --
 -- Índices de tabela `animais`
 --
-ALTER TABLE `animais`
-  ADD PRIMARY KEY (`id`);
+-- ALTER TABLE `animais`
+  -- ADD PRIMARY KEY (`id`);
 
 --
 -- Índices de tabela `plantas`
 --
-ALTER TABLE `plantas`
-  ADD PRIMARY KEY (`id`);
+-- ALTER TABLE `plantas`
+  -- ADD PRIMARY KEY (`id`);
 
 --
 -- Índices de tabela `tbusuarios`
 --
-ALTER TABLE `tbusuarios`
-  ADD PRIMARY KEY (`id`);
+-- ALTER TABLE `tbusuarios`
+  -- ADD PRIMARY KEY (`id`);
 
 --
 -- AUTO_INCREMENT para tabelas despejadas
