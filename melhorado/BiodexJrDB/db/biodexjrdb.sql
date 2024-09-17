@@ -26,38 +26,37 @@ SET time_zone = "+00:00";
 --
 -- Estrutura para tabela `animais`
 --
+-- CREATE DATABASE  biodexjrdb;
 
-  -- CREATE DATABASE  biodexjrdb;
+-- USE biodexjrdb;
 
-USE biodexjrdb;
+-- CREATE TABLE `animais` (
+--   `id` int(5) NOT NULL AUTO_INCREMENT PRIMARY KEY,
+--   `nome` varchar(20) NOT NULL,
+--   `cat` char(13) DEFAULT NULL,
+--   `descricao` varchar(150) NOT NULL
+-- ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
-CREATE TABLE `animais` (
-  `id` int(5) NOT NULL AUTO_INCREMENT PRIMARY KEY,
-  `nome` varchar(20) NOT NULL,
-  `cat` char(13) DEFAULT NULL,
-  `descricao` varchar(150) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+-- --
+-- -- Despejando dados para a tabela `animais`
+-- --
 
---
--- Despejando dados para a tabela `animais`
---
-
-INSERT INTO `animais` (`id`, `nome`, `cat`, `descricao`) VALUES
-(1, 'Leão','Mamífero', 'Reino: Animaila Filo: Chordata Classe: Mammalia'),
-(2, 'Águia','Ave', 'Reino: Animaila Filo: Chordata Classe: Aves'),
-(3, 'Tubarão','Peixe', 'Reino: Animaila Filo: Chordata Classe: Chondrichthyes'),
-(4, 'Elefante','Mamífero', 'Reino: Animaila Filo: Chordata Classe: Mammalia'),
-(5, 'Falcão','Ave', 'Reino: Animaila Filo: Chordata Classe: Aves'),
-(6, 'Salmão','Peixe', 'Reino: Animaila Filo: Chordata Classe: Actinopterygii'),
-(7, 'Urso','Mamífero', 'Reino: Animaila Filo: Chordata Classe: Mammalia'),
-(8, 'Coruja','Ave', 'Reino: Animaila Filo: Chordata Classe: Aves'),
-(9, 'Baleia','Mamífero', 'Reino: Animaila Filo: Chordata Classe: Mammalia'),
-(10, 'Pinguim','Ave', 'Reino: Animaila Filo: Chordata Classe: Aves'),
-(11, 'Atum','Peixe', 'Reino: Animaila Filo: Chordata Classe: Actinopterygii'),
-(12, 'Carpa','Peixe', 'Reino: Animaila Filo: Chordata Classe: Actinopterygii'),
-(13, 'Bagre','Peixe', 'Reino: Animaila Filo: Chordata Classe: Actinopterygii'),
-(14, 'Dourado','Peixe', 'Reino: Animaila Filo: Chordata Classe: Actinopterygii'),
-(15, 'Pacu','Peixe', 'Reino: Animaila Filo: Chordata Classe: Actinopterygii'),
+-- INSERT INTO `animais` (`id`, `nome`, `cat`, `descricao`) VALUES
+-- (1, 'Leão','Mamífero', 'Reino: Animaila Filo: Chordata Classe: Mammalia'),
+-- (2, 'Águia','Ave', 'Reino: Animaila Filo: Chordata Classe: Aves'),
+-- (3, 'Tubarão','Peixe', 'Reino: Animaila Filo: Chordata Classe: Chondrichthyes'),
+-- (4, 'Elefante','Mamífero', 'Reino: Animaila Filo: Chordata Classe: Mammalia'),
+-- (5, 'Falcão','Ave', 'Reino: Animaila Filo: Chordata Classe: Aves'),
+-- (6, 'Salmão','Peixe', 'Reino: Animaila Filo: Chordata Classe: Actinopterygii'),
+-- (7, 'Urso','Mamífero', 'Reino: Animaila Filo: Chordata Classe: Mammalia'),
+-- (8, 'Coruja','Ave', 'Reino: Animaila Filo: Chordata Classe: Aves'),
+-- (9, 'Baleia','Mamífero', 'Reino: Animaila Filo: Chordata Classe: Mammalia'),
+-- (10, 'Pinguim','Ave', 'Reino: Animaila Filo: Chordata Classe: Aves'),
+-- (11, 'Atum','Peixe', 'Reino: Animaila Filo: Chordata Classe: Actinopterygii'),
+-- (12, 'Carpa','Peixe', 'Reino: Animaila Filo: Chordata Classe: Actinopterygii'),
+-- (13, 'Bagre','Peixe', 'Reino: Animaila Filo: Chordata Classe: Actinopterygii'),
+-- (14, 'Dourado','Peixe', 'Reino: Animaila Filo: Chordata Classe: Actinopterygii'),
+-- (15, 'Pacu','Peixe', 'Reino: Animaila Filo: Chordata Classe: Actinopterygii');
 
 
 -- --------------------------------------------------------
@@ -107,6 +106,8 @@ CREATE TABLE `tbusuarios` (
   `senha` varchar(20) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
+
+INSERT INTO tbusuarios(id, usuario, senha) VALUES (1, 'adm@gmail.com', 'admin');
 --
 -- Índices para tabelas despejadas
 --

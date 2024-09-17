@@ -23,7 +23,7 @@
         <label for="email">Usuário</label>
         <input type="email" id="email" name="u" required placeholder="Digite seu usuário" autofocus="true" />
         <label for="email">Password</label>
-        <input type="password" required placeholder="Password" autofocus="true" />
+        <input type="password" name="s" required placeholder="Password" autofocus="true" />
        <a href="index.php"><button type="submit" class="submitbtn">Acessar</button></a>
       </div>
        
@@ -34,9 +34,10 @@
             
             <?php
                 if(isset($_POST['u']) && isset($_POST['s'])){
-                    
+                        $u = $_POST['u'];
+                        $s = $_POST['s'];
                         include_once("conexao.php");
-                        $sql = "SELECT * FROM usuarios WHERE usuario='$u';";
+                        $sql = "SELECT * FROM tbusuarios WHERE usuario='$u';";
                         $resultado = mysqli_query($conexao,$sql);
                         if(mysqli_num_rows($resultado)>0){
                             $linha = mysqli_fetch_assoc($resultado);
@@ -51,7 +52,7 @@
                         }else{
                             session_start();
                             $_SESSION['usuario']=$u;
-                            header("location:index.php");
+                            header("location:cadastraanimal.php");
                         }
                     }
                 
