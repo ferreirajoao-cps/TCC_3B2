@@ -99,7 +99,7 @@
         <div class="card-body">
           <h5 class="card-title">Reino Fungi</h5>
           <p class="card-text">Aqui estão os fungos, como cogumelos.</p>
-          <a href="reinofungi.html" class="btn btn-success">Ver Mais</a>
+          <a href="fungi.php" class="btn btn-success">Ver Mais</a>
         </div>
       </div>
       <div class="card" style="width: 18rem;">

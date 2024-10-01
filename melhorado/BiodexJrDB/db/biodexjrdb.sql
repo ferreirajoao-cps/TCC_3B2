@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 02/09/2024 às 22:31
+-- Tempo de geração: 30/09/2024 às 23:09
 -- Versão do servidor: 10.4.32-MariaDB
 -- Versão do PHP: 8.2.12
 
@@ -26,38 +26,74 @@ SET time_zone = "+00:00";
 --
 -- Estrutura para tabela `animais`
 --
--- CREATE DATABASE  biodexjrdb;
 
--- USE biodexjrdb;
+CREATE TABLE `animais` (
+  `id` int(5) NOT NULL,
+  `nome` varchar(20) NOT NULL,
+  `cat` char(13) DEFAULT NULL,
+  `descricao` varchar(150) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
--- CREATE TABLE `animais` (
---   `id` int(5) NOT NULL AUTO_INCREMENT PRIMARY KEY,
---   `nome` varchar(20) NOT NULL,
---   `cat` char(13) DEFAULT NULL,
---   `descricao` varchar(150) NOT NULL
--- ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+--
+-- Despejando dados para a tabela `animais`
+--
 
--- --
--- -- Despejando dados para a tabela `animais`
--- --
+INSERT INTO `animais` (`id`, `nome`, `cat`, `descricao`) VALUES
+(1, 'Leão', 'Mamífero', 'Reino: Animaila Filo: Chordata Classe: Mammalia'),
+(2, 'Águia', 'Ave', 'Reino: Animaila Filo: Chordata Classe: Aves'),
+(3, 'Tubarão', 'Peixe', 'Reino: Animaila Filo: Chordata Classe: Chondrichthyes'),
+(4, 'Elefante', 'Mamífero', 'Reino: Animaila Filo: Chordata Classe: Mammalia'),
+(5, 'Falcão', 'Ave', 'Reino: Animaila Filo: Chordata Classe: Aves'),
+(6, 'Salmão', 'Peixe', 'Reino: Animaila Filo: Chordata Classe: Actinopterygii'),
+(7, 'Urso', 'Mamífero', 'Reino: Animaila Filo: Chordata Classe: Mammalia'),
+(8, 'Coruja', 'Ave', 'Reino: Animaila Filo: Chordata Classe: Aves'),
+(9, 'Baleia', 'Mamífero', 'Reino: Animaila Filo: Chordata Classe: Mammalia'),
+(10, 'Pinguim', 'Ave', 'Reino: Animaila Filo: Chordata Classe: Aves'),
+(11, 'Atum', 'Peixe', 'Reino: Animaila Filo: Chordata Classe: Actinopterygii'),
+(12, 'Carpa', 'Peixe', 'Reino: Animaila Filo: Chordata Classe: Actinopterygii'),
+(13, 'Bagre', 'Peixe', 'Reino: Animaila Filo: Chordata Classe: Actinopterygii'),
+(14, 'Dourado', 'Peixe', 'Reino: Animaila Filo: Chordata Classe: Actinopterygii'),
+(15, 'Pacu', 'Peixe', 'Reino: Animaila Filo: Chordata Classe: Actinopterygii');
 
--- INSERT INTO `animais` (`id`, `nome`, `cat`, `descricao`) VALUES
--- (1, 'Leão','Mamífero', 'Reino: Animaila Filo: Chordata Classe: Mammalia'),
--- (2, 'Águia','Ave', 'Reino: Animaila Filo: Chordata Classe: Aves'),
--- (3, 'Tubarão','Peixe', 'Reino: Animaila Filo: Chordata Classe: Chondrichthyes'),
--- (4, 'Elefante','Mamífero', 'Reino: Animaila Filo: Chordata Classe: Mammalia'),
--- (5, 'Falcão','Ave', 'Reino: Animaila Filo: Chordata Classe: Aves'),
--- (6, 'Salmão','Peixe', 'Reino: Animaila Filo: Chordata Classe: Actinopterygii'),
--- (7, 'Urso','Mamífero', 'Reino: Animaila Filo: Chordata Classe: Mammalia'),
--- (8, 'Coruja','Ave', 'Reino: Animaila Filo: Chordata Classe: Aves'),
--- (9, 'Baleia','Mamífero', 'Reino: Animaila Filo: Chordata Classe: Mammalia'),
--- (10, 'Pinguim','Ave', 'Reino: Animaila Filo: Chordata Classe: Aves'),
--- (11, 'Atum','Peixe', 'Reino: Animaila Filo: Chordata Classe: Actinopterygii'),
--- (12, 'Carpa','Peixe', 'Reino: Animaila Filo: Chordata Classe: Actinopterygii'),
--- (13, 'Bagre','Peixe', 'Reino: Animaila Filo: Chordata Classe: Actinopterygii'),
--- (14, 'Dourado','Peixe', 'Reino: Animaila Filo: Chordata Classe: Actinopterygii'),
--- (15, 'Pacu','Peixe', 'Reino: Animaila Filo: Chordata Classe: Actinopterygii');
+-- --------------------------------------------------------
 
+--
+-- Estrutura para tabela `fungi`
+--
+
+CREATE TABLE `fungi` (
+  `id` int(5) NOT NULL,
+  `nome` varchar(20) NOT NULL,
+  `cat` char(13) DEFAULT NULL,
+  `descricao` varchar(150) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Despejando dados para a tabela `fungi`
+--
+
+INSERT INTO `fungi` (`id`, `nome`, `cat`, `descricao`) VALUES
+(1, 'Cogumelo', 'Fungo', 'Reino: Fungi Filo: Basidiomycota Classe: Agaricomycetes');
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura para tabela `monera`
+--
+
+CREATE TABLE `monera` (
+  `id` int(5) NOT NULL,
+  `nome` varchar(20) NOT NULL,
+  `cat` char(13) DEFAULT NULL,
+  `descricao` varchar(150) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Despejando dados para a tabela `monera`
+--
+
+INSERT INTO `monera` (`id`, `nome`, `cat`, `descricao`) VALUES
+(1, 'Bactéria', 'Monera', 'Reino: Monera Filo: Proteobacteria Classe: Gammaproteobacteria');
 
 -- --------------------------------------------------------
 
@@ -66,7 +102,7 @@ SET time_zone = "+00:00";
 --
 
 CREATE TABLE `plantas` (
-  `id` int(11) NOT NULL AUTO_INCREMENT PRIMARY KEY,
+  `id` int(11) NOT NULL,
   `nome` varchar(120) NOT NULL,
   `grupo` varchar(20) NOT NULL,
   `tipo` varchar(15) NOT NULL,
@@ -97,17 +133,42 @@ INSERT INTO `plantas` (`id`, `nome`, `grupo`, `tipo`, `descricao`) VALUES
 -- --------------------------------------------------------
 
 --
+-- Estrutura para tabela `protista`
+--
+
+CREATE TABLE `protista` (
+  `id` int(5) NOT NULL,
+  `nome` varchar(20) NOT NULL,
+  `cat` char(13) DEFAULT NULL,
+  `descricao` varchar(150) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Despejando dados para a tabela `protista`
+--
+
+INSERT INTO `protista` (`id`, `nome`, `cat`, `descricao`) VALUES
+(1, 'Ameba', 'Protista', 'Reino: Protista Filo: Amoebozoa Classe: Tubulinea');
+
+-- --------------------------------------------------------
+
+--
 -- Estrutura para tabela `tbusuarios`
 --
 
 CREATE TABLE `tbusuarios` (
-  `id` int(11) NOT NULL PRIMARY KEY,
+  `id` int(11) NOT NULL,
   `usuario` varchar(20) NOT NULL,
   `senha` varchar(20) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
+--
+-- Despejando dados para a tabela `tbusuarios`
+--
 
-INSERT INTO tbusuarios(id, usuario, senha) VALUES (1, 'adm@gmail.com', 'admin');
+INSERT INTO `tbusuarios` (`id`, `usuario`, `senha`) VALUES
+(1, 'adm@gmail.com', 'admin');
+
 --
 -- Índices para tabelas despejadas
 --
@@ -115,20 +176,38 @@ INSERT INTO tbusuarios(id, usuario, senha) VALUES (1, 'adm@gmail.com', 'admin');
 --
 -- Índices de tabela `animais`
 --
--- ALTER TABLE `animais`
-  -- ADD PRIMARY KEY (`id`);
+ALTER TABLE `animais`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Índices de tabela `fungi`
+--
+ALTER TABLE `fungi`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Índices de tabela `monera`
+--
+ALTER TABLE `monera`
+  ADD PRIMARY KEY (`id`);
 
 --
 -- Índices de tabela `plantas`
 --
--- ALTER TABLE `plantas`
-  -- ADD PRIMARY KEY (`id`);
+ALTER TABLE `plantas`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Índices de tabela `protista`
+--
+ALTER TABLE `protista`
+  ADD PRIMARY KEY (`id`);
 
 --
 -- Índices de tabela `tbusuarios`
 --
--- ALTER TABLE `tbusuarios`
-  -- ADD PRIMARY KEY (`id`);
+ALTER TABLE `tbusuarios`
+  ADD PRIMARY KEY (`id`);
 
 --
 -- AUTO_INCREMENT para tabelas despejadas
@@ -138,13 +217,31 @@ INSERT INTO tbusuarios(id, usuario, senha) VALUES (1, 'adm@gmail.com', 'admin');
 -- AUTO_INCREMENT de tabela `animais`
 --
 ALTER TABLE `animais`
-  MODIFY `id` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
+  MODIFY `id` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
 
 --
--- AUTO_INCREMENT de tabela `tbusuarios`
+-- AUTO_INCREMENT de tabela `fungi`
 --
-ALTER TABLE `tbusuarios`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+ALTER TABLE `fungi`
+  MODIFY `id` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
+-- AUTO_INCREMENT de tabela `monera`
+--
+ALTER TABLE `monera`
+  MODIFY `id` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
+-- AUTO_INCREMENT de tabela `plantas`
+--
+ALTER TABLE `plantas`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
+
+--
+-- AUTO_INCREMENT de tabela `protista`
+--
+ALTER TABLE `protista`
+  MODIFY `id` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

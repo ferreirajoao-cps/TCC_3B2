@@ -42,8 +42,8 @@
   <div class="imagem">
     <div class="container">
       <div class="centro">
-        <h1>Reino Plantae</h1>
-        <a href="https://brasilescola.uol.com.br/biologia/reino-plantae.htm#:~:text=Os%20organismos%20do%20Reino%20Plantae,e%20cloroplastos%20em%20seu%20interior.">
+        <h1>Reino Monera</h1>
+        <a href="https://brasilescola.uol.com.br/biologia/monera.htm">
           <h3>O <strong>Reino Monera</strong>, engloba uma vasta diversidade de seres vivos unicelulares, procariontes e microscópicos. Esses organismos são considerados os mais antigos da Terra e desempenham um papel fundamental nos ecossistemas.</h3><br>
         </a>
         <h2>Características Comuns</h2>
@@ -63,7 +63,7 @@ Arqueias: São bem parecidas com as bactérias, mas vivem em lugares bem estranh
   //Acessando o BD
   include_once ("conexao.php");
   //Buscando reinos
-  $s1 = 'select distinct reino from plantas order by reino asc;';
+  $s1 = 'select distinct cat from monera order by cat asc;';
   $r1 = mysqli_query($conexao, $s1);
   ?>
 
@@ -85,7 +85,7 @@ Arqueias: São bem parecidas com as bactérias, mas vivem em lugares bem estranh
       $limite = 30;
 
       //Calcula o total de regristros
-      $s = "select * from plantas";
+      $s = "select * from monera";
       $r2 = mysqli_query($conexao, $s);
       $total = mysqli_num_rows($r2);
 
@@ -97,35 +97,33 @@ Arqueias: São bem parecidas com as bactérias, mas vivem em lugares bem estranh
 
 
       //Instrução SQL
-      if (isset($_GET['reino']) && $_GET['reino'] != "todos") {
-        $reino = $_GET['reino'];
-        $sql = "select * from plantas where reino like '%animalia'= '$reino' || reino2='$reino' limit $inicio,$limite ";
+      if (isset($_GET['cat']) && $_GET['cat'] != "todos") {
+        $cat = $_GET['cat'];
+        $sql = "select * from monera where cat like '%monera'= '$cat' || cat2='$cat' limit $inicio,$limite ";
       } else {
-        $sql = "select * from plantas limit $inicio, $limite;";
+        $sql = "select * from monera limit $inicio, $limite;";
       }
       //Executando a instrução SQL
       $resultado = mysqli_query($conexao, $sql);
       //Verificando se encontrou resultado
       if (mysqli_num_rows($resultado) > 0) {
-        //Lenda os dados de cada plantas
-        while ($plantas = mysqli_fetch_assoc($resultado)) {
-          $id = $plantas['id'];
-          $nome = $plantas['nome'];
-          $reino = $plantas['reino'];
-          $grupo = $plantas['grupo'];
-          $tipo = $plantas['tipo'];
-          $desc = $plantas['descricao'];
+        //Lenda os dados de cada monera
+        while ($monera = mysqli_fetch_assoc($resultado)) {
+          $id = $monera['id'];
+          $nome = $monera['nome'];
+          $cat = $monera['cat'];
+          $desc = $monera['descricao'];
 
           echo "<!-- ######################  Aqui começa o pokemon ############################# -->
 <div class='pokemon' tabindex='$id'> 
   <figure class='pokemon-figure'>
-    <img src='img/plantas/$id.png' alt='$nome'> <!-- Imagem do pokemon -->
+    <img src='img/monera/$id.png' alt='$nome'> <!-- Imagem do pokemon -->
   </figure>
   <section class='pokemon-description'>
     <span class='pokemon-id'>#$id</span> <!-- Número do pokemon -->
     <h1 class='pokemon-name'>$nome</h1> <!--Nome do pokemon -->
     <div class='pokemon-types'>
-      <span class='pokemon-type background-$reino'>$reino</span> <!-- Tipo 1 -->
+      <span class='pokemon-type background-$cat'>$cat</span> <!-- Tipo 1 -->
     </div>
   </section>
   <!-- Início dos stats do Pokemon, exibidos quando clicamos -->
@@ -138,21 +136,9 @@ Arqueias: São bem parecidas com as bactérias, mas vivem em lugares bem estranh
         </div>
       </div>
       <div class='stat-row'>
-        <div>Reino</div> <!-- Ataque -->
+        <div>cat</div> <!-- Ataque -->
         <div class='stat-bar'>
-          <div>$reino</div>
-        </div>
-      </div>
-      <div class='stat-row'>
-        <div>grupo</div> <!-- Defesa -->
-        <div class='stat-bar'>
-          <div>$grupo</div>
-        </div>
-      </div>
-      <div class='stat-row'>
-        <div>tipo</div> <!-- Defesa -->
-        <div class='stat-bar'>
-          <div>$tipo</div>
+          <div>$cat</div>
         </div>
       </div>
       <div class='stat-row'>
@@ -166,20 +152,20 @@ Arqueias: São bem parecidas com as bactérias, mas vivem em lugares bem estranh
 </div>";
 
           //   echo "
-          //   <!-- ######################  Aqui começa o plantas ############################# -->
-          //   <div class='plantas' tabindex='$id'> 
-          //     <figure class='plantas-figure'>
-          //       <img src='img/$id.png' alt='$nome'> <!-- Imagem do plantas -->
+          //   <!-- ######################  Aqui começa o monera ############################# -->
+          //   <div class='monera' tabindex='$id'> 
+          //     <figure class='monera-figure'>
+          //       <img src='img/$id.png' alt='$nome'> <!-- Imagem do monera -->
           //     </figure>
-          //     <section class='plantas-description'>
-          //       <span class='plantas-id'>#$id</span> <!-- Número do plantas -->
-          //       <h1 class='plantas-name'>$nome</h1> <!--Nome do plantas -->
-          //       <div class='plantas-types'>
-          //         <span class='plantas-type background-$reino'>$reino</span> <!-- reino 1 -->
+          //     <section class='monera-description'>
+          //       <span class='monera-id'>#$id</span> <!-- Número do monera -->
+          //       <h1 class='monera-name'>$nome</h1> <!--Nome do monera -->
+          //       <div class='monera-types'>
+          //         <span class='monera-type background-$reino'>$reino</span> <!-- reino 1 -->
           //       </div>
           //     </section>
-          //     <!-- Início dos stats do plantas, exibidos quando clicamos -->
-          //       <section class='plantas-stats'>
+          //     <!-- Início dos stats do monera, exibidos quando clicamos -->
+          //       <section class='monera-stats'>
           //         <div class='stat-row'>
           //           <div>Nome</div> <!-- Nome -->
           //           <div class='stat-bar'>
@@ -205,14 +191,14 @@ Arqueias: São bem parecidas com as bactérias, mas vivem em lugares bem estranh
           //           </div>
           //         </div>
           //       </section>
-          //       <!-- Fim dos stats do plantas, exibidos quando clicamos -->
+          //       <!-- Fim dos stats do monera, exibidos quando clicamos -->
           //   </div>
-          // <!-- ######################### Aqui Termina o plantas ####################################-->
+          // <!-- ######################### Aqui Termina o monera ####################################-->
       
           //   ";
         }
       } else {
-        echo "<p>Nenhum plantas encontrado.</p>";
+        echo "<p>Nenhum monera encontrado.</p>";
       }
       ?>
   </div>
