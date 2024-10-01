@@ -71,7 +71,7 @@
 
     <div id="cardgroup" class="row row-cols-1 row-cols-md-3 g-4">
       <div class="card" style="width: 18rem;">
-        <img src="./img/bannersReinos/animal.jpeg" class="card-img-top" alt="...">
+        <img src="../img/quadrado/animal.jpeg" class="card-img-top" alt="...">
         <div class="card-body">
           <h5 class="card-title">Reino Animalia</h5>
           <p class="card-text">São os animais, como peixes, aves e mamíferos.</p>
@@ -79,7 +79,7 @@
         </div>
       </div>
       <div class="card" style="width: 18rem;">
-        <img src="./img/bannersReinos/plantae.jpeg" class="card-img-top" alt="...">
+        <img src="../img/quadrado/plantae.jpeg" class="card-img-top" alt="...">
         <div class="card-body">
           <h5 class="card-title">Reino Plantae</h5>
           <p class="card-text">Inclui plantas, como árvores e flores.</p>
@@ -87,7 +87,7 @@
         </div>
       </div>
       <div class="card" style="width: 18rem;">
-        <img src="./img/bannersReinos/monera.jpeg" class="card-img-top" alt="...">
+        <img src="../img/quadrado/monera.jpeg" class="card-img-top" alt="...">
         <div class="card-body">
           <h5 class="card-title">Reino Monera</h5>
           <p class="card-text">Composto por bactérias e algas azuis.</p>
@@ -107,7 +107,7 @@
         <div class="card-body">
           <h5 class="card-title">Reino Protista</h5>
           <p class="card-text">São organismos unicelulares, como algas e protozoários.</p>
-          <a href="reinoprotista.html" class="btn btn-success">Ver Mais</a>
+          <a href="protozoario.php" class="btn btn-success">Ver Mais</a>
         </div>
       </div>
     </div>

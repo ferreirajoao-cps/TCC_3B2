@@ -52,7 +52,7 @@
                         }else{
                             session_start();
                             $_SESSION['usuario']=$u;
-                            header("location:cadastraanimal.php");
+                            header("location:escolhaCadastro.php");
                         }
                     }
                 

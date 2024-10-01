@@ -5,7 +5,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="./css/home.css">
-  <link rel="stylesheet" href="./css/estilo5.css">
+  <link rel="stylesheet" href="./css/estilo4.css">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
@@ -42,21 +42,18 @@
   <div class="imagem">
     <div class="container">
       <div class="centro">
-      <h1>Reino Fungi</h1>
-        <a href="https://brasilescola.uol.com.br/biologia/reino-plantae.htm#:~:text=Os%20organismos%20do%20Reino%20Plantae,e%20cloroplastos%20em%20seu%20interior.">
-          <h3>O <strong>Reino Fungi</strong>, Fungos são seres vivos únicos, distintos de plantas e animais. Eles não possuem clorofila e, portanto, não realizam fotossíntese. Em vez disso, obtêm nutrientes de outros organismos ou matéria orgânica em decomposição.</h3><br>
+        <h1>Reino protista</h1>
+        <a href="https://brasilescola.uol.com.br/biologia/protista.htm">
+          <h3>O <strong>Reino protista</strong>, engloba uma vasta diversidade de seres vivos unicelulares, procariontes e microscópicos. Esses organismos são considerados os mais antigos da Terra e desempenham um papel fundamental nos ecossistemas.</h3><br>
         </a>
         <h2>Características Comuns</h2>
-        <p>Heterótrofos: Não produzem seu próprio alimento.
-          Parede celular de quitina: Substância que também compõe o exoesqueleto de insetos.
-          Estrutura filamentosa: Corpo composto por hifas, filamentos que se ramificam formando o micélio.
-          Reprodução: Pode ser sexuada ou assexuada.
+        <p>Exemplos de organismos procariontes: Bactérias, arqueas e cianobactérias. 
+          Importância dos procariontes: Seu papel na natureza, na indústria e na saúde humana.
+          Diferenças entre células procariontes e eucariontes: Comparação entre células simples e complexas.
         </p><br>
-        <h2>Importância</h2><br>
-        <p>Decompositores: Essenciais para o ciclo de nutrientes nos ecossistemas.
-          Alimentos: Cogumelos comestíveis e leveduras para fermentação.
-          Medicamentos: Produção de antibióticos como a penicilina.
-          Doenças: Causam doenças em plantas e animais, incluindo humanos.
+        <h2>Tipos de protistas:</h2><br>
+        <p>Bactérias: São os mais famosos. Algumas causam doenças, mas muitas outras são importantes para a natureza e até para a gente, como as que ajudam a fazer iogurte e queijo.
+Arqueias: São bem parecidas com as bactérias, mas vivem em lugares bem estranhos, como fontes de água quente e salinas.
         </p>
       </div>
     </div>
@@ -66,7 +63,7 @@
   //Acessando o BD
   include_once ("conexao.php");
   //Buscando reinos
-  $s1 = 'select distinct cat from fungi order by cat asc;';
+  $s1 = 'select distinct cat from protista order by cat asc;';
   $r1 = mysqli_query($conexao, $s1);
   ?>
 
@@ -88,7 +85,7 @@
       $limite = 30;
 
       //Calcula o total de regristros
-      $s = "select * from fungi";
+      $s = "select * from protista";
       $r2 = mysqli_query($conexao, $s);
       $total = mysqli_num_rows($r2);
 
@@ -102,25 +99,25 @@
       //Instrução SQL
       if (isset($_GET['cat']) && $_GET['cat'] != "todos") {
         $cat = $_GET['cat'];
-        $sql = "select * from fungi where cat like '%fungi'= '$cat' || cat2='$cat' limit $inicio,$limite ";
+        $sql = "select * from protista where cat like '%protista'= '$cat' || cat2='$cat' limit $inicio,$limite ";
       } else {
-        $sql = "select * from fungi limit $inicio, $limite;";
+        $sql = "select * from protista limit $inicio, $limite;";
       }
       //Executando a instrução SQL
       $resultado = mysqli_query($conexao, $sql);
       //Verificando se encontrou resultado
       if (mysqli_num_rows($resultado) > 0) {
-        //Lenda os dados de cada fungi
-        while ($fungi = mysqli_fetch_assoc($resultado)) {
-          $id = $fungi['id'];
-          $nome = $fungi['nome'];
-          $cat = $fungi['cat'];
-          $desc = $fungi['descricao'];
+        //Lenda os dados de cada protista
+        while ($protista = mysqli_fetch_assoc($resultado)) {
+          $id = $protista['id'];
+          $nome = $protista['nome'];
+          $cat = $protista['cat'];
+          $desc = $protista['descricao'];
 
           echo "<!-- ######################  Aqui começa o pokemon ############################# -->
 <div class='pokemon' tabindex='$id'> 
   <figure class='pokemon-figure'>
-    <img src='img/fungi/$id.png' alt='$nome'> <!-- Imagem do pokemon -->
+    <img src='img/proto/$id.png' alt='$nome'> <!-- Imagem do pokemon -->
   </figure>
   <section class='pokemon-description'>
     <span class='pokemon-id'>#$id</span> <!-- Número do pokemon -->
@@ -139,7 +136,7 @@
         </div>
       </div>
       <div class='stat-row'>
-        <div>categoria</div> <!-- Ataque -->
+        <div>cat</div> <!-- Ataque -->
         <div class='stat-bar'>
           <div>$cat</div>
         </div>
@@ -155,20 +152,20 @@
 </div>";
 
           //   echo "
-          //   <!-- ######################  Aqui começa o fungi ############################# -->
-          //   <div class='fungi' tabindex='$id'> 
-          //     <figure class='fungi-figure'>
-          //       <img src='img/$id.png' alt='$nome'> <!-- Imagem do fungi -->
+          //   <!-- ######################  Aqui começa o protista ############################# -->
+          //   <div class='protista' tabindex='$id'> 
+          //     <figure class='protista-figure'>
+          //       <img src='img/$id.png' alt='$nome'> <!-- Imagem do protista -->
           //     </figure>
-          //     <section class='fungi-description'>
-          //       <span class='fungi-id'>#$id</span> <!-- Número do fungi -->
-          //       <h1 class='fungi-name'>$nome</h1> <!--Nome do fungi -->
-          //       <div class='fungi-types'>
-          //         <span class='fungi-type background-$reino'>$reino</span> <!-- reino 1 -->
+          //     <section class='protista-description'>
+          //       <span class='protista-id'>#$id</span> <!-- Número do protista -->
+          //       <h1 class='protista-name'>$nome</h1> <!--Nome do protista -->
+          //       <div class='protista-types'>
+          //         <span class='protista-type background-$reino'>$reino</span> <!-- reino 1 -->
           //       </div>
           //     </section>
-          //     <!-- Início dos stats do fungi, exibidos quando clicamos -->
-          //       <section class='fungi-stats'>
+          //     <!-- Início dos stats do protista, exibidos quando clicamos -->
+          //       <section class='protista-stats'>
           //         <div class='stat-row'>
           //           <div>Nome</div> <!-- Nome -->
           //           <div class='stat-bar'>
@@ -194,14 +191,14 @@
           //           </div>
           //         </div>
           //       </section>
-          //       <!-- Fim dos stats do fungi, exibidos quando clicamos -->
+          //       <!-- Fim dos stats do protista, exibidos quando clicamos -->
           //   </div>
-          // <!-- ######################### Aqui Termina o fungi ####################################-->
+          // <!-- ######################### Aqui Termina o protista ####################################-->
       
           //   ";
         }
       } else {
-        echo "<p>Nenhum fungi encontrado.</p>";
+        echo "<p>Nenhum protista encontrado.</p>";
       }
       ?>
   </div>
